@@ -72,13 +72,11 @@ function drawKeypad(x, y, t) {  // alert('1');
   var imgData = ctx.createImageData(kw, kh); 
 	
 	ctx.fillStyle = 'rgba(192,192,192,1.0)'; // gray
-	ctx.fillRect(x, y, 1080, 128*4); 
+	ctx.fillRect(x, y, 1080, 128*4);  
+	 
+var imgBuf = new ArrayBuffer(kw*4*kh*rw*cl); 
+	var imgView = new Uint8Array(imgBuf); 
 	
-	ctx.fillStyle = 'rgba(192,192,192,1.0)'; // gray
-	ctx.fillRect(x, y-128, 1080, 128); 
-	
-  var imgBuf = new ArrayBuffer(kw*4*kh*rw*cl); 
-  var imgView = new Uint8Array(imgBuf); 
   
   for (let i=0; i<(kw*4*kh)*(rw*cl); i+=4) { 
     imgView[i+0] = 0xFF; // R
