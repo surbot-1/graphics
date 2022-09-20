@@ -58,7 +58,7 @@
         var imgData = ctx.createImageData(kw, kh); 
 	
         ctx.fillStyle = 'rgba(192,192,192,1.0)'; // gray
-        ctx.fillRect(x, y, 1080, 128*4);
+        ctx.fillRect(x, y, 1080, 1024);
         
         for (let i=0; i<(kw*4*kh)*(rw*cl); i+=4) { 
             imgView[i+0] = 0x00; // R
