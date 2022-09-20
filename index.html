@@ -40,7 +40,8 @@
 	  
 	<script> 
 		
-		var touchx=0; var touchy=0; var touch=0;
+		var touchx=0; var touchy=0; var touch=0; 
+		var timer;
 	
 function handleEnd(evt) { 
        evt.preventDefault();
@@ -61,6 +62,7 @@ window.addEventListener('beforeunload', function (e) {
 e.preventDefault(); 
 e.returnValue = ''; 
 }); 
+	timer = setTimeInterval(readPad,0100);
 	
 </script>
 	  
@@ -125,7 +127,7 @@ e.returnValue = '';
 		var tx=touchx; var ty=touchy; 
                 var px=0; var py=0; 
                 var pw=0; var ph=0;
-                var cl=16; var rw=6; 
+                var cl=16; var rw=16; 
                 var kc=0; var kr=0; 
                 var kl=2; var kt=2; 
                 var kw=60; var kh=60; 
