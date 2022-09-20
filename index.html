@@ -96,7 +96,7 @@ e.returnValue = '';
         function draw(kc, kr, kw, kh, kl, kt) { 
 	    var kx=x+px+(kw+kl*2)*kc; 
 	    var ky=y+py+(kh+kt*2)*kr; 
-	    imgData = ctx.createImageData(kw+pw, kh+ph);
+	    // imgData = ctx.createImageData(kw+pw, kh+ph);
 	    for (let i=0; i<(kw+pw)*4*(kh+ph); i++) { 
 		imgData.data[i] = imgView[(kw*4*kh*cl)*kr+(kw*4*kh)*kc+i]; 
 	    } 
@@ -119,8 +119,12 @@ e.returnValue = '';
              draw(kc, kr, kw, kh, kl, kt); 
           } 
         }  
-      }
-      
+      } 
+	    
+	    function readPad() {
+		    
+	    }
+	    
     </script>
     <script>
     </script>
