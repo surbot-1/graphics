@@ -152,8 +152,18 @@ e.returnValue = '';
 			var ky=y+py+(kh+kt*2)*kr; 
 			if(tx>kx && tx<(kx+kl+kw+pw+kl) && ty>ky && ty<(ky+kt+kh+ph+kt)) { 
 				b=true; 
-			} else {b=false;}
+			} else {b=false;} 
                 } 
+		
+		function show(kc, kr, kw, kh, kl, kt) {
+			var kx=x+px+(kw+kl*2)*kc; 
+	                var ky=y+py+(kh+kt*2)*kr; 
+	                // imgData = ctx.createImageData(kw+pw, kh+ph);
+	                for (let i=0; i<(kw+pw)*4*(kh+ph); i++) { 
+				imgData.data[i] = imgView[(kw*4*kh*cl)*kr+(kw*4*kh)*kc+i]; 
+			} 
+	                ctx.putImageData(imgData, kx+kl, ky+kt); 
+		}
 		
 		for (let j=0; j<rw; j++) { 
                     for (let i=0; i<cl; i++) { 
