@@ -11,29 +11,29 @@
     <script>
       var div = document.createElement('div');
       div.setAttribute('id','div');
-      div.setAttribute('width','1080');
-      div.setAttribute('height','2176');
-      div.setAttribute('border','solid black 1px');
+      div.style.setAttribute('width','1080px');
+      div.style.setAttribute('height','2176px');
+      div.style.setAttribute('border','solid black 1px');
       document.body.appendChild(div);
       
       var div1 = document.createElement('div');
       div1.setAttribute('id','div1');
-      div1.setAttribute('width','1080');
-      div1.setAttribute('height','512');
-      // div1.setAttribute('border','solid black 1px');
+      div1.style.setAttribute('width','1080px');
+      div1.style.setAttribute('height','512px');
+      // div1.style.setAttribute('border','solid black 1px');
       document.getElementById('div').appendChild(div1);
       
       var div2 = document.createElement('div');
       div2.setAttribute('id','div2');
-      div2.setAttribute('width','1080');
-      div2.setAttribute('height','512');
-      // div2.setAttribute('border','solid black 1px');
+      div2.style.setAttribute('width','1080px');
+      div2.style.setAttribute('height','512px');
+      // div2.style.setAttribute('border','solid black 1px');
       document.getElementById('div').appendChild(div2);
       
       var canvas = document.createElement('canvas');
       canvas.setAttribute('id','canvas');
-      canvas.setAttribute('width','1080');
-      canvas.setAttribute('height','1024');
+      canvas.setAttribute('width','1080px');
+      canvas.setAttribute('height','1024px'); alert('1'); 
       // canvas.setAttribute('border','solid black 1px');
       document.getElementById('div').appendChild(canvas);
     </script>
