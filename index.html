@@ -59,13 +59,15 @@ document.getElementById('div').appendChild(canvas);
 <script>
 
   drawKeypad(0, 0, 0); // 2160-512 
-function drawKeypad(x, y, t) {   alert('1');
+function drawKeypad(x, y, t) {   
+	alert('1');
   var px=0; var py=0; 
   var pw=0; var ph=0;
   var cl=10; var rw=4; 
   var kc=0; var kr=0; 
   var kl=14; var kt=16; 
   var kw=80; var kh=96; 
+			
   
   var cvs = document.getElementById('canvas'); 
   var ctx = cvs.getContext('2d'); 
@@ -74,10 +76,10 @@ function drawKeypad(x, y, t) {   alert('1');
 	ctx.fillStyle = 'rgba(192,192,192,1.0)'; // gray
 	ctx.fillRect(x, y, 1080, 128*4);  
 	 
-var imgBuf = new ArrayBuffer(kw*4*kh*rw*cl); 
+        var imgBuf = new ArrayBuffer(kw*4*kh*rw*cl);  
+	
 	var imgView = new Uint8Array(imgBuf); 
 	
-  
   for (let i=0; i<(kw*4*kh)*(rw*cl); i+=4) { 
     imgView[i+0] = 0xFF; // R
     imgView[i+1] = 0xFF; // G
