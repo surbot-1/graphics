@@ -11,9 +11,9 @@
     <script>
       var div = document.createElement('div');
       div.setAttribute('id','div');
-      div.style.setAttribute('width','1080');
-      div.style.setAttribute('height','2176');
-      div.style.setAttribute('border','solid black 1px');
+      // div.style.setAttribute('width','1080');
+      // div.style.setAttribute('height','2176');
+      // div.style.setAttribute('border','solid black 1px');
       document.body.appendChild(div);
       
       var div1 = document.createElement('div');
@@ -30,11 +30,13 @@
       canvas.setAttribute('height','1024'); alert('1'); 
       // canvas.setAttribute('border','solid black 1px');
       document.getElementById('div').appendChild(canvas);
-    </script> 
+    </script>
+	  
 	<script>
 		document.getElementById('div1').style = 'width:1080px;height:512px';
 		document.getElementById('div2').style = 'width:1080px;height:512px';
 	</script>
+	  
     <script> 
 	    
       drawKeypad(0, 0, 0); // 2160-512 
