@@ -26,9 +26,10 @@
       
       var canvas = document.createElement('canvas');
       canvas.setAttribute('id','canvas');
-      canvas.setAttribute('width','1080');
-      canvas.setAttribute('height','1024'); 
-      canvas.setAttribute('border','solid black 1px');
+      // canvas.setAttribute('width','1024');
+      // canvas.setAttribute('height','1024'); 
+	   // canvas.setAttribute('margin-left','28'); 
+      // canvas.setAttribute('border','solid black 1px');
       document.getElementById('div').appendChild(canvas); alert('can'); 
     </script>
 	  
@@ -36,6 +37,7 @@
 		document.getElementById('div').style = 'width:1080px;height:2176px;';
 		document.getElementById('div1').style = 'width:1080px;height:512px;';
 		document.getElementById('div2').style = 'width:1080px;height:512px;';
+		document.getElementById('canvas').style = 'width:1024px;height:1024px;margin-left:28px;';
 	</script>
 	  
 	<script> 
@@ -67,7 +69,7 @@ e.returnValue = '';
 		if(th) {    
 			if(tx>=0 && tx<1024 && ty>=0 && ty<1024) { 
 				clearInterval(timer); touch=0; 
-				readPad(28, 0, 0); alert(tx+' '+ty);
+				readPad(0, 0, 0); alert(tx+' '+ty);
 				timer = setInterval(check,0100);
 			} 
 		} 
@@ -78,7 +80,7 @@ e.returnValue = '';
 	  
     <script> 
 	    
-      // drawPad(28, 0, 0); // 2160-512 
+      drawPad(0, 0, 0); // 2160-512 
       function drawPad(x, y, t) {  
         alert('1');  
         var px=0; var py=0; 
@@ -131,7 +133,6 @@ e.returnValue = '';
           } 
         }  
       } 
-	    drawPad(28, 0, 0); // 2160-512 
 	    
 	</script>
 	  
