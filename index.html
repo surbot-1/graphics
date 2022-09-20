@@ -66,7 +66,7 @@ e.returnValue = '';
 		var tx = touchx; var ty = touchy;  var th = touch; 
 		if(th) {    
 			if(tx>0 && tx<1080 && ty>0 && ty<1080) { 
-				clearInterval(timer); 
+				clearInterval(timer); touch=0; 
 				readPad(28, 0, 0); 
 				timer = setInterval(check,0020);
 			} 
