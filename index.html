@@ -155,14 +155,6 @@ e.returnValue = '';
 			} else {b=false;}
                 } 
 		
-		function read(kc, kr, kw, kh, kl, kt) { 
-	                var kx=x+px+(kw+kl*2)*kc; 
-	                var ky=y+py+(kh+kt*2)*kr;  
-			if(tx>kx && tx<(kx+kl+kw+pw+kl) && ty>ky && ty<(ky+kt+kh+ph+kt)) {  
-				b=true; 
-			} else {b=false;} 
-		} 
-		
 		for (let j=0; j<rw; j++) { 
                     for (let i=0; i<cl; i++) { 
                        /* if (j==0 && i==0) {cl=10; px=0;} 
