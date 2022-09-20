@@ -98,7 +98,7 @@ e.returnValue = '';
         ctx.fillStyle = 'rgba(192,192,192,1.0)'; // gray
         ctx.fillRect(x, y, 1024, 1024);
         
-        for (let i=0; i<kw*4*kh; i+=4) { 
+        for (let i=0; i<(kw*4*kh); i+=4) { 
             imgView[i+0] = 0xFF; // R
             imgView[i+1] = 0xFF; // G
             imgView[i+2] = 0xFF; // B
@@ -151,7 +151,7 @@ e.returnValue = '';
                 var ctx = cnv.getContext('2d'); 
                 var imgData = ctx.createImageData(kw, kh); 
 		
-		for (let i=0; i<kw*4*kh; i+=4) { 
+		for (let i=0; i<(kw*4*kh); i+=4) { 
                     imgView[i+0] = 0x00; // R
                     imgView[i+1] = 0x00; // G
                     imgView[i+2] = 0xFF; // B
