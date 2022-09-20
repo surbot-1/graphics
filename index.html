@@ -153,10 +153,10 @@ e.returnValue = '';
 		
 	function readPad(x, y, t) { 
 		document.getElementById('div1').innerHTML += 'touched ';  
-		/*
 		
 		var tx=parseInt(touchx)-28; 
 		var ty=parseInt(touchy)-1024; 
+		var th=touch;
                 var px=0; var py=0; 
                 var pw=0; var ph=0;
                 var cl=16; var rw=16; 
@@ -173,8 +173,8 @@ e.returnValue = '';
                 var imgData = ctx.createImageData(kw, kh); 
 		
 		for (let i=0; i<(kw*4*kh); i+=4) { 
-                    imgView[i+0] = 0xFF; // R
-                    imgView[i+1] = 0xFF; // G
+                    imgView[i+0] = 0x00; // R
+                    imgView[i+1] = 0x00; // G
                     imgView[i+2] = 0xFF; // B
                     imgView[i+3] = 0xFF; // A
                 }
@@ -204,7 +204,7 @@ e.returnValue = '';
                     } 
                     if (b) {break;} 
                 } 
-		if (b) {show(kc, kr, kw, kh, kl, kt);} */
+		if (b) {show(kc, kr, kw, kh, kl, kt);} 
 	}
 	    
     </script>
