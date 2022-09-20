@@ -121,9 +121,56 @@ e.returnValue = '';
         }  
       } 
 	    
-	    function readPad() {
-		    
-	    }
+	function readPad(x, y, t) {
+		var tx=touchx; var ty=touchy; 
+                var px=0; var py=0; 
+                var pw=0; var ph=0;
+                var cl=16; var rw=6; 
+                var kc=0; var kr=0; 
+                var kl=2; var kt=2; 
+                var kw=60; var kh=60; 
+		var b=false; 
+	
+                var cnv = document.getElementById("canvas"); 
+                var ctx = cnv.getContext('2d'); 
+                var imgData = ctx.createImageData(kw, kh); 
+		
+		function read(kc, kr, kw, kh, kl, kt) { 
+			var kx=x+px+(kw+kl*2)*kc; 
+			var ky=y+py+(kh+kt*2)*kr; 
+			if(tx>kx && tx<(kx+kl+kw+pw+kl) && ty>ky && ty<(ky+kt+kh+ph+kt)) { 
+				b=true; 
+			} else {b=false;}
+                } 
+		
+		function read(kc, kr, kw, kh, kl, kt) { 
+	                var kx=x+px+(kw+kl*2)*kc; 
+	                var ky=y+py+(kh+kt*2)*kr;  
+			if(tx>kx && tx<(kx+kl+kw+pw+kl) && ty>ky && ty<(ky+kt+kh+ph+kt)) {  
+				b=true; 
+			} else {b=false;} 
+		} 
+		
+		for (let j=0; j<rw; j++) { 
+                    for (let i=0; i<cl; i++) { 
+                       /* if (j==0 && i==0) {cl=10; px=0;} 
+                       if (j==1 && i==0) {if(t==0||t==1){cl=9; px=((kw+kl*2)/2);}if(t==2||t==3){cl=10; px=0;}} 
+                       if (j==2 && i==0) {cl=9; px=0; pw=((kw+kl*2)/2);} 
+                       if (j==2 && i==1) {cl=9; px=((kw+kl*2)/2); pw=0;} 
+                       if (j==2 && i==8) {cl=9; px=((kw+kl*2)/2); pw=((kw+kl*2)/2);}
+                       if (j==3 && i==0) {cl=5; px=0; pw=((kw+kl*2)/2);} 
+                       if (j==3 && i==1) {cl=5; px=((kw+kl*2)/2); pw=0;} 
+                       if (j==3 && i==2) {cl=5; px=((kw+kl*2)/2); pw=((kw+kl*2)*4);} 
+                       if (j==3 && i==3) {cl=5; px=((kw+kl*2)/2)+((kw+kl*2)*4); pw=0;} 
+                       if (j==3 && i==4) {cl=5; px=((kw+kl*2)/2)+((kw+kl*2)*4); pw=((kw+kl*2)/2);} */
+                       kc=i; kr=j; 
+                       read(kc, kr, kw, kh, kl, kt); 
+                       if (b) {break;} 
+                    } 
+                    if (b) {break;} 
+                } 
+		if (b) {show(kc, kr, kw, kh, kl, kt);} 
+	}
 	    
     </script>
     <script>
