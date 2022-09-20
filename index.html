@@ -40,7 +40,7 @@
     
     <script>
       
-      // drawKeypad(20, 1648); // 2160-512 
+      drawKeypad(20, 20, 0); // 2160-512 
       function drawKeypad(x, y, t) {  
         // alert('1');  
         var px=0; var py=0; 
@@ -53,10 +53,10 @@
         var imgBuf = new ArrayBuffer(kw*4*kh*rw*cl);
         var imgView = new Uint8Array(imgBuf);
   
-        var cvs = document.getElementById("canvas"); 
-        var ctx = cvs.getContext('2d'); 
+        var cnv = document.getElementById('canvas'); 
+        var ctx = cnv.getContext('2d'); 
         var imgData = ctx.createImageData(kw, kh); 
-        ctx.fillStyle = "rgba(192,192,192,1.0)"; // gray
+        ctx.fillStyle = 'rgba(192,192,192,1.0)'; // gray
         ctx.fillRect(x, y, 1080, 128*4);
         
         for (let i=0; i<(kw*4*kh)*(rw*cl); i+=4) { 
@@ -67,13 +67,13 @@
         }
         
         function draw(kc, kr, kw, kh, kl, kt) { 
-	         var kx=x+px+(kw+kl*2)*kc; 
-	         var ky=y+py+(kh+kt*2)*kr; 
-	         imgData = ctx.createImageData(kw+pw, kh+ph);
-	         for (let i=0; i<(kw+pw)*4*(kh+ph); i++) { 
-		           imgData.data[i] = imgView[(kw*4*kh*cl)*kr+(kw*4*kh)*kc+i]; 
-	         } 
-	         ctx.putImageData(imgData, kx+kl, ky+kt); 
+	    var kx=x+px+(kw+kl*2)*kc; 
+	    var ky=y+py+(kh+kt*2)*kr; 
+	    imgData = ctx.createImageData(kw+pw, kh+ph);
+	    for (let i=0; i<(kw+pw)*4*(kh+ph); i++) { 
+		imgData.data[i] = imgView[(kw*4*kh*cl)*kr+(kw*4*kh)*kc+i]; 
+	    } 
+	    ctx.putImageData(imgData, kx+kl, ky+kt); 
         } 
   
         for (let j=0; j<rw; j++) { 
