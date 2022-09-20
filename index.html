@@ -63,11 +63,11 @@ e.preventDefault();
 e.returnValue = ''; 
 }); 
 	function check() { 
-		var x = touchx; var y = touchy;  var t = touch; 
-		if(t) {    
-			if(x>0 && x<1080 && y>0 && y<1080) { 
-			clearInterval(timer);
-			readPad(28, 0, 0); 
+		var tx = touchx; var ty = touchy;  var th = touch; 
+		if(th) {    
+			if(tx>0 && tx<1080 && ty>0 && ty<1080) { 
+				clearInterval(timer); 
+				readPad(28, 0, 0); 
 			} 
 		} 
 		timer = setInterval(check,0020);
@@ -131,7 +131,8 @@ e.returnValue = '';
         }  
       } 
 	    
-	function readPad(x, y, t) { alert('readPad');
+	function readPad(x, y, t) { 
+		alert('readPad');
 		var tx=touchx; var ty=touchy; 
                 var px=0; var py=0; 
                 var pw=0; var ph=0;
