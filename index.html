@@ -30,10 +30,13 @@
       canvas.setAttribute('height','1024px'); alert('1'); 
       // canvas.setAttribute('border','solid black 1px');
       document.getElementById('div').appendChild(canvas);
-    </script>
-    
-    <script>
-      
+    </script> 
+	<script>
+		document.getElementById('div1').style = 'width:1080px;height:512px';
+		document.getElementById('div2').style = 'width:1080px;height:512px';
+	</script>
+    <script> 
+	    
       drawKeypad(0, 0, 0); // 2160-512 
       function drawKeypad(x, y, t) {  
         // alert('1');  
