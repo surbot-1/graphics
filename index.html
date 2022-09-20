@@ -63,10 +63,12 @@ e.preventDefault();
 e.returnValue = ''; 
 }); 
 	function check() { 
-		var x = touchx; var y = touchy;  
-		if(x>0 && x<1080 && y>0 && y<1080) { 
+		var x = touchx; var y = touchy;  var t = touch; 
+		if(t) {    
+			if(x>0 && x<1080 && y>0 && y<1080) { 
 			clearInterval(timer);
 			readPad(28, 0, 0); 
+			} 
 		}
 	}
 	timer = setInterval(check,0020);
