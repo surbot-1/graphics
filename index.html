@@ -87,7 +87,7 @@ e.returnValue = '';
         var kl=2; var kt=2; 
         var kw=60; var kh=60; 
         
-        var imgBuf = new ArrayBuffer(kw*4*kh*rw*cl);
+        var imgBuf = new ArrayBuffer(kw*4*kh);
         var imgView = new Uint8Array(imgBuf);
   
         var cnv = document.getElementById('canvas'); 
@@ -141,7 +141,7 @@ e.returnValue = '';
                 var kw=60; var kh=60; 
 		var b=false; 
 		
-		var imgBuf = new ArrayBuffer(kw*4*kh*rw*cl);
+		var imgBuf = new ArrayBuffer(kw*4*kh);
                 var imgView = new Uint8Array(imgBuf); 
 	
                 var cnv = document.getElementById('canvas'); 
