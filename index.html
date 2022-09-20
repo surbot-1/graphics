@@ -78,7 +78,7 @@ e.returnValue = '';
 	  
     <script> 
 	    
-      drawPad(28, 0, 0); // 2160-512 
+      // drawPad(28, 0, 0); // 2160-512 
       function drawPad(x, y, t) {  
         // alert('1');  
         var px=0; var py=0; 
@@ -131,6 +131,7 @@ e.returnValue = '';
           } 
         }  
       } 
+	    drawPad(28, 0, 0); // 2160-512 
 	    
 	function readPad(x, y, t) { 
 		document.getElementById('div1').innerHTML += 'touched ';  /*
