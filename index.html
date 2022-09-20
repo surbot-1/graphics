@@ -67,7 +67,7 @@ e.returnValue = '';
 		if(th) {    
 			if(tx>=0 && tx<1024 && ty>=0 && ty<1024) { 
 				clearInterval(timer); touch=0; 
-				readPad(28, 0, 0); 
+				readPad(28, 0, 0); alert(tx+' '+ty);
 				timer = setInterval(check,0100);
 			} 
 		} 
