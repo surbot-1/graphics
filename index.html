@@ -172,7 +172,7 @@ e.returnValue = '';
                 var kc=0; var kr=0; 
                 var kl=2; var kt=2; 
                 var kw=60; var kh=60; 
-		var b=false; // var cb=false; 
+		var b=false; 
 		
 		var imgBuf = new ArrayBuffer(kw*4*kh*cl*rw);
                 var imgView = new Uint8Array(imgBuf); 
@@ -197,14 +197,16 @@ e.returnValue = '';
                 } 
 		
 		function update(kc, kr, kw, kh, pw, ph) { 
-			cb = !cb; var pr,pg,pb,pa;  
+			var cb=false; var pr,pg,pb,pa;  
 			for (let i=0; i<1*4*1; i+=4) { 
 				pr = pxlView[4*(cl*kr+kc)+i+0]; // R 
 				pg = pxlView[4*(cl*kr+kc)+i+1]; // G 
 				pb = pxlView[4*(cl*kr+kc)+i+2]; // B 
 				pa = pxlView[4*(cl*kr+kc)+i+3]; // A 
 			} 
-			if(pr==0xFF){cb=false;} else if(pr==0x40){cb=true;} 
+			if(pr==0xFF){cb=false;} 
+			else if(pr==0x40){cb=true;} 
+			cb=!cb; 
 			if(!cb) {
 	                for (let i=0; i<kw*4*kh; i+=4) { 
 				imgView[kw*4*kh*(cl*kr+kc)+i+0] = 0xFF; // R
