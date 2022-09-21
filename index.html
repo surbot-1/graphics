@@ -57,9 +57,9 @@
 		
 		var touchx=0; var touchy=0; var touch=0; 
 		var timer; var cb=false; var imgPxl; 
-		var pxlBuf = new ArrayBuffer(128*4*128*128);
+		var pxlBuf = new ArrayBuffer(16*4*16*128);
                 var pxlView = new Uint8Array(pxlBuf); 
-		var byteBuf = new ArrayBuffer(1*2*16);
+		var byteBuf = new ArrayBuffer(1*2*16*128);
                 var byteView = new Uint8Array(byteBuf); 
 	
 function handleEnd(evt) { 
