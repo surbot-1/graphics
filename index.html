@@ -260,7 +260,7 @@ e.returnValue = '';
 		}
 		
 		function show(kc, kr, kw, kh, kl, kt) { 
-			document.getElementById('div2').innerHTML += (byteView[0]).toString('hex').toUpperCase() +'<br>';  
+			document.getElementById('div2').innerHTML += (byteView[0]).toString(16).toUpperCase() +'<br>';  
 			var kx=x+px+(kw+kl*2)*kc; 
 	                var ky=y+py+(kh+kt*2)*kr; 
 	                for (let i=0; i<kw*4*kh; i++) { 
