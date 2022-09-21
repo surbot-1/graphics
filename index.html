@@ -244,7 +244,7 @@ e.returnValue = '';
 				if(kc>=0 && kc<8) { 
 					var bt = byte[kc]; 
 					var bv = byteView[1*2*kr+0]; 
-					byteView[1*2*kr+0] = bt & bv; 
+					byteView[1*2*kr+0] = byte[kc] & byteView[1*2*kr+0]; 
 				} 
 				else if(kc>=8 && kc<16) { 
 					var bt = byte[kc-8]; 
