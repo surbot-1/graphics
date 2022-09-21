@@ -56,7 +56,7 @@
 	<script> 
 		
 		var touchx=0; var touchy=0; var touch=0; 
-		var timer;
+		var timer; var cb=false; 
 	
 function handleEnd(evt) { 
        evt.preventDefault();
@@ -159,7 +159,7 @@ e.returnValue = '';
                 var kc=0; var kr=0; 
                 var kl=2; var kt=2; 
                 var kw=60; var kh=60; 
-		var b=false; var cb=false; 
+		var b=false; // var cb=false; 
 		
 		var imgBuf = new ArrayBuffer(kw*4*kh*cl*rw);
                 var imgView = new Uint8Array(imgBuf); 
