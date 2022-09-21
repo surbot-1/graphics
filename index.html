@@ -79,7 +79,7 @@ e.returnValue = '';
 }); 
 	function check() { 
 		var tx = parseInt(touchx)-28; 
-		var ty = parseInt(touchy)-1024;  
+		var ty = parseInt(touchy)-(1024+128);  
 		var th = touch; 
 		if(th) {    
 			if(tx>=0 && tx<1024 && ty>=0 && ty<1024) { 
@@ -151,7 +151,7 @@ e.returnValue = '';
 		document.getElementById('div1').innerHTML += 'touched ';  
 		
 		var tx=parseInt(touchx)-28; 
-		var ty=parseInt(touchy)-1024; 
+		var ty=parseInt(touchy)-(1024+128); 
 		var th=touch;
                 var px=0; var py=0; 
                 var pw=0; var ph=0;
