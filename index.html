@@ -244,12 +244,12 @@ e.returnValue = '';
 				if(kc>=0 && kc<8) { 
 					var bt = byte[kc]; 
 					var bv = byteView[1*2*kr+0]; 
-					byteView[1*2*kr+0] = bt && bv; 
+					byteView[1*2*kr+0] = bt & bv; 
 				} 
 				else if(kc>=8 && kc<16) { 
 					var bt = byte[kc-8]; 
 					var bv = byteView[1*2*kr+1]; 
-					byteView[1*2*kr+1] = bt && bv; 
+					byteView[1*2*kr+1] = bt & bv; 
 				} 
 			} 
 			else if(cb) { 
@@ -257,12 +257,12 @@ e.returnValue = '';
 				if(kc>=0 && kc<8) { 
 					var bt = byte[kc]; 
 					var bv = byteView[1*2*kr+0]; 
-					byteView[1*2*kr+0] = bt || bv; 
+					byteView[1*2*kr+0] = bt | bv; 
 				} 
 				else if(kc>=8 && kc<16) { 
 					var bt = byte[kc-8]; 
 					var bv = byteView[1*2*kr+1]; 
-					byteView[1*2*kr+1] = bt || bv; 
+					byteView[1*2*kr+1] = bt | bv; 
 				} 
 			}
 		}
