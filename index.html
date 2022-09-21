@@ -159,7 +159,7 @@ e.returnValue = '';
                 var kc=0; var kr=0; 
                 var kl=2; var kt=2; 
                 var kw=60; var kh=60; 
-		var b=false; var toggle=false; 
+		var b=false; var cb=false; 
 		
 		var imgBuf = new ArrayBuffer(kw*4*kh*cl*rw);
                 var imgView = new Uint8Array(imgBuf); 
@@ -183,13 +183,21 @@ e.returnValue = '';
 			} else {b=false;} 
                 } 
 		
-		function update(kc, kr, kw, kh, kl, kt) {
-			var kx=x+px+(kw+kl*2)*kc; 
-	                var ky=y+py+(kh+kt*2)*kr; 
-	                for (let i=0; i<kw*4*kh; i++) { 
-				imgData.data[i] = imgView[kw*4*kh*(cl*kr+kc)+i]; 
+		function update(kc, kr, kw, kh, pw, ph) { 
+			cb = !cb; 
+	                for (let i=0; i<kw*4*kh; i+=4) { 
+				if(cb) {
+				imgView[kw*4*kh*(cl*kr+kc)+i+0] = 0x40; // R
+				imgView[kw*4*kh*(cl*kr+kc)+i+1] = 0x40; // G
+				imgView[kw*4*kh*(cl*kr+kc)+i+2] = 0xFF; // B
+				imgView[kw*4*kh*(cl*kr+kc)+i+3] = 0xFF; // A 
+				} else if(!cb) { 
+				imgView[kw*4*kh*(cl*kr+kc)+i+0] = 0xFF; // R
+				imgView[kw*4*kh*(cl*kr+kc)+i+1] = 0xFF; // G
+				imgView[kw*4*kh*(cl*kr+kc)+i+2] = 0xFF; // B
+				imgView[kw*4*kh*(cl*kr+kc)+i+3] = 0xFF; // A 
+				}
 			} 
-	                ctx.putImageData(imgData, kx+kl, ky+kt); 
 		}
 		
 		function show(kc, kr, kw, kh, kl, kt) {
@@ -210,7 +218,7 @@ e.returnValue = '';
                     if (b) {break;} 
                 } 
 		if (b) { 
-			update(kc, kr, kw, kh, kl, kt);
+			update(kc, kr, kw, kh, pw, ph);
 			show(kc, kr, kw, kh, kl, kt);
 		       } 
 	}
