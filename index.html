@@ -285,11 +285,13 @@ e.returnValue = '';
 			
 			var imgData2 = ctx1.createImageData(128, 128);
 			for (let i=0; i<16*4*16; i+=4) { 
-				for (let j=0; j<4*8; j+=4) { 
-					imgData2.data[i*8+j+0] = pxlView[i+0];
-					imgData2.data[i*8+j+1] = pxlView[i+1];
-					imgData2.data[i*8+j+2] = pxlView[i+2];
-					imgData2.data[i*8+j+3] = pxlView[i+3];
+				for (let j=0; j<8; j++) { 
+				for (let k=0; k<4*8; k+=4) { 
+					imgData2.data[i*8+j*128+k+0] = pxlView[i+0];
+					imgData2.data[i*8+j*128+k+1] = pxlView[i+1];
+					imgData2.data[i*8+j*128+k+2] = pxlView[i+2];
+					imgData2.data[i*8+j*128+k+3] = pxlView[i+3];
+				} 
 				}
 			} 
 	                ctx1.putImageData(imgData2, 128, 0); 
