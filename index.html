@@ -56,7 +56,9 @@
 	<script> 
 		
 		var touchx=0; var touchy=0; var touch=0; 
-		var timer; var cb=false; 
+		var timer; var cb=false; var imgPxl; 
+		var pxlBuf = new ArrayBuffer(128*4*128*128);
+                var pxlView = new Uint8Array(pxlBuf); 
 	
 function handleEnd(evt) { 
        evt.preventDefault();
