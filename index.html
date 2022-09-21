@@ -66,7 +66,7 @@
                         pxlView[i+1] = 0xFF; // G
                         pxlView[i+2] = 0xFF; // B
                         pxlView[i+3] = 0xFF; // A
-		} 
+		} alert(pxlView[0]); 
 		for(let i=0; i<1*2*16; i++) { 
 			byteView[i] = 0x00; // byte
 		}
@@ -197,27 +197,27 @@ e.returnValue = '';
                 } 
 		
 		function update(kc, kr, kw, kh, pw, ph) { 
-			cb = !cb; var pr,pg,pb,pa;  /*
+			cb = !cb; var pr,pg,pb,pa;  
 			for (let i=0; i<1*4*1; i+=4) { 
 				pr = pxlView[4*(cl*kr+kc)+i+0]; // R 
 				pg = pxlView[4*(cl*kr+kc)+i+1]; // G 
 				pb = pxlView[4*(cl*kr+kc)+i+2]; // B 
 				pa = pxlView[4*(cl*kr+kc)+i+3]; // A 
 			} 
-			if(pr==0xFF){cb=false;} else if(pr==0x40){cb=true;} */ 
+			if(pr==0xFF){cb=false;} else if(pr==0x40){cb=true;} 
 			if(!cb) {
 	                for (let i=0; i<kw*4*kh; i+=4) { 
 				imgView[kw*4*kh*(cl*kr+kc)+i+0] = 0xFF; // R
 				imgView[kw*4*kh*(cl*kr+kc)+i+1] = 0xFF; // G
 				imgView[kw*4*kh*(cl*kr+kc)+i+2] = 0xFF; // B
 				imgView[kw*4*kh*(cl*kr+kc)+i+3] = 0xFF; // A 
-			}  /* 
+			}  
 				for (let i=0; i<1*4*1; i+=4) { 
 				pxlView[4*(cl*kr+kc)+i+0] = 0xFF; // R 
 				pxlView[4*(cl*kr+kc)+i+1] = 0xFF; // G 
 				pxlView[4*(cl*kr+kc)+i+2] = 0xFF; // B 
 				pxlView[4*(cl*kr+kc)+i+3] = 0xFF; // A 
-				} */
+				} 
 			}
 			else if(cb) {
 			for (let i=0; i<kw*4*kh; i+=4) {
@@ -225,13 +225,13 @@ e.returnValue = '';
 				imgView[kw*4*kh*(cl*kr+kc)+i+1] = 0x40; // G
 				imgView[kw*4*kh*(cl*kr+kc)+i+2] = 0xFF; // B
 				imgView[kw*4*kh*(cl*kr+kc)+i+3] = 0xFF; // A 
-			} /* 
+			} 
 				for (let i=0; i<1*4*1; i+=4) { 
 				pxlView[4*(cl*kr+kc)+i+0] = 0x40; // R 
 				pxlView[4*(cl*kr+kc)+i+1] = 0x40; // G 
 				pxlView[4*(cl*kr+kc)+i+2] = 0xFF; // B 
 				pxlView[4*(cl*kr+kc)+i+3] = 0xFF; // A 
-				} */ 
+				} 
 			}
 		}
 		
