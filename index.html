@@ -185,19 +185,22 @@ e.returnValue = '';
 		
 		function update(kc, kr, kw, kh, pw, ph) { 
 			cb = !cb; 
-	                for (let i=0; i<kw*4*kh; i+=4) { 
-				if(cb) {
-				imgView[kw*4*kh*(cl*kr+kc)+i+0] = 0x40; // R
-				imgView[kw*4*kh*(cl*kr+kc)+i+1] = 0x40; // G
-				imgView[kw*4*kh*(cl*kr+kc)+i+2] = 0xFF; // B
-				imgView[kw*4*kh*(cl*kr+kc)+i+3] = 0xFF; // A 
-				} else if(!cb) { 
+			if(!cb) {
+	                for (let i=0; i<kw*4*kh; i+=4) {
 				imgView[kw*4*kh*(cl*kr+kc)+i+0] = 0xFF; // R
 				imgView[kw*4*kh*(cl*kr+kc)+i+1] = 0xFF; // G
 				imgView[kw*4*kh*(cl*kr+kc)+i+2] = 0xFF; // B
 				imgView[kw*4*kh*(cl*kr+kc)+i+3] = 0xFF; // A 
-				}
 			} 
+			}
+			if(cb) {
+			for (let i=0; i<kw*4*kh; i+=4) {
+				imgView[kw*4*kh*(cl*kr+kc)+i+0] = 0x40; // R
+				imgView[kw*4*kh*(cl*kr+kc)+i+1] = 0x40; // G
+				imgView[kw*4*kh*(cl*kr+kc)+i+2] = 0xFF; // B
+				imgView[kw*4*kh*(cl*kr+kc)+i+3] = 0xFF; // A 
+			} 
+			}
 		}
 		
 		function show(kc, kr, kw, kh, kl, kt) {
