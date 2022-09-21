@@ -197,14 +197,27 @@ e.returnValue = '';
                 } 
 		
 		function update(kc, kr, kw, kh, pw, ph) { 
-			cb = !cb; 
+			var cb=false; var pr,pg,pb,pa;  
+			for (let i=0; i<4; i+=4) { 
+				pr = pxlView[(cl*kr+kc)+i+0]; // R 
+				pg = pxlView[(cl*kr+kc)+i+1]; // G 
+				pb = pxlView[(cl*kr+kc)+i+2]; // B 
+				pa = pxlView[(cl*kr+kc)+i+3]; // A 
+			} 
+			if(pr==0xFF){cb=false;} else if(pr==0x40){cb=true;}
 			if(!cb) {
-	                for (let i=0; i<kw*4*kh; i+=4) {
+	                for (let i=0; i<kw*4*kh; i+=4) { 
 				imgView[kw*4*kh*(cl*kr+kc)+i+0] = 0xFF; // R
 				imgView[kw*4*kh*(cl*kr+kc)+i+1] = 0xFF; // G
 				imgView[kw*4*kh*(cl*kr+kc)+i+2] = 0xFF; // B
 				imgView[kw*4*kh*(cl*kr+kc)+i+3] = 0xFF; // A 
 			} 
+				for (let i=0; i<4; i+=4) { 
+				pxlView[(cl*kr+kc)+i+0] = 0xFF; // R 
+				pxlView[(cl*kr+kc)+i+1] = 0xFF; // G 
+				pxlView[(cl*kr+kc)+i+2] = 0xFF; // B 
+				pxlView[(cl*kr+kc)+i+3] = 0xFF; // A 
+				} 
 			}
 			if(cb) {
 			for (let i=0; i<kw*4*kh; i+=4) {
@@ -213,6 +226,12 @@ e.returnValue = '';
 				imgView[kw*4*kh*(cl*kr+kc)+i+2] = 0xFF; // B
 				imgView[kw*4*kh*(cl*kr+kc)+i+3] = 0xFF; // A 
 			} 
+				for (let i=0; i<4; i+=4) { 
+				pxlView[(cl*kr+kc)+i+0] = 0x40; // R 
+				pxlView[(cl*kr+kc)+i+1] = 0x40; // G 
+				pxlView[(cl*kr+kc)+i+2] = 0xFF; // B 
+				pxlView[(cl*kr+kc)+i+3] = 0xFF; // A 
+				} 
 			}
 		}
 		
