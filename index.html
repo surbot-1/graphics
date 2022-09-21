@@ -231,13 +231,19 @@ e.returnValue = '';
 				pxlView[4*(cl*kr+kc)+i+3] = 0xFF; // A 
 				} 
 			} 
-			if(cb) {
+			else if(cb) {
 				for (let i=0; i<1*4*1; i+=4) { 
 				pxlView[4*(cl*kr+kc)+i+0] = 0x40; // R 
 				pxlView[4*(cl*kr+kc)+i+1] = 0x40; // G 
 				pxlView[4*(cl*kr+kc)+i+2] = 0xFF; // B 
 				pxlView[4*(cl*kr+kc)+i+3] = 0xFF; // A 
 				} 
+			} 
+			if(!cb) {
+				
+			} 
+			else if(cb) {
+				
 			}
 		}
 		
