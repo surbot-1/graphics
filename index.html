@@ -59,7 +59,7 @@
 		var timer; 
 		var pxlBuf = new ArrayBuffer(16*4*16*128);
                 var pxlView = new Uint8Array(pxlBuf); 
-		var byteBuf = new ArrayBuffer(1*2*16*128);
+		var byteBuf = new ArrayBuffer(1*2*16);
                 var byteView = new Uint8Array(byteBuf); 
 		for(let i=0; i<16*4*16; i+=4) { 
 			pxlView[i+0] = 0xFF; // R
