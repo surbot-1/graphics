@@ -240,26 +240,22 @@ e.returnValue = '';
 				} 
 			} 
 			if(!cb) { 
-				byte = 128; 
-				if(kc>=0 && kc<8) { 
-					for(let i=0; i<kc; i++) { byte >> 1; } 
-					byteView[1*2*kr+0] = byte && byteView[1*2*kr+0]; 
+				byte = [0x7F,0xBF,0xDF,0xEF,0xF7,0xFB,0xFD,0xFE]; 
+				if(kc>=0 && kc<8) { // for(let i=0; i<kc; i++) { byte >> 1; } 
+					byteView[1*2*kr+0] = byte[kc] && byteView[1*2*kr+0]; 
 				} 
-				else if(kc>=8 && kc<16) {  
-					for(let i=0; i<kc-8; i++) { byte >> 1; } 
-					byteView[1*2*kr+1] = byte && byteView[1*2*kr+1]; 
-				} alert(1+' '+byte); 
+				else if(kc>=8 && kc<16) {  // for(let i=0; i<kc-8; i++) { byte >> 1; } 
+					byteView[1*2*kr+1] = byte[kc-8] && byteView[1*2*kr+1]; 
+				} alert(1+' '+byte[kc]); 
 			} 
 			else if(cb) { 
-				byte = 128; 
-				if(kc>=0 && kc<8) { 
-					for(let i=0; i<kc; i++) { byte >>1; } 
-					byteView[1*2*kr+0] = byte || byteView[1*2*kr+0]; 
+				byte = [0x80,0x40,0x20,0x10,0x08,0x04,0x02,0x01]; 
+				if(kc>=0 && kc<8) { // for(let i=0; i<kc; i++) { byte >>1; } 
+					byteView[1*2*kr+0] = byte[kc] || byteView[1*2*kr+0]; 
 				} 
-				else if(kc>=8 && kc<16) { 
-					for(let i=0; i<kc-8; i++) { byte >>1; } 
-					byteView[1*2*kr+1] = byte || byteView[1*2*kr+1]; 
-				} alert(2+' '+byte); 
+				else if(kc>=8 && kc<16) { // for(let i=0; i<kc-8; i++) { byte >>1; } 
+					byteView[1*2*kr+1] = byte[kc-8] || byteView[1*2*kr+1]; 
+				} alert(2+' '+byte[kc]); 
 			}
 		}
 		
