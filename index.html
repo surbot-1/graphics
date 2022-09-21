@@ -61,6 +61,15 @@
                 var pxlView = new Uint8Array(pxlBuf); 
 		var byteBuf = new ArrayBuffer(1*2*16*128);
                 var byteView = new Uint8Array(byteBuf); 
+		for(let i=0; i<16*4*16; i++) { 
+			pxlView[i+0] = 0xFF; // R
+                        pxlView[i+1] = 0xFF; // G
+                        pxlView[i+2] = 0xFF; // B
+                        pxlView[i+3] = 0xFF; // A
+		} 
+		for(let i=0; i<1*2*16; i++) { 
+			byteView[i] = 0x00; // byte
+		}
 	
 function handleEnd(evt) { 
        evt.preventDefault();
