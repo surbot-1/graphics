@@ -32,10 +32,17 @@
       div4.setAttribute('id','div4'); 
       document.getElementById('div').appendChild(div4); 
       
-      var canvas = document.createElement('canvas');
+      var canv = document.createElement('canvas');
+      canv.setAttribute('id','canv');
+      canv.setAttribute('width','1024');
+      canv.setAttribute('height','1024'); 
+      // canvas.setAttribute('border','solid black 1px');
+      document.getElementById('div3').appendChild(canv); 
+	   
+	var canvas = document.createElement('canvas');
       canvas.setAttribute('id','canvas');
       canvas.setAttribute('width','1024');
-      canvas.setAttribute('height','1024'); 
+      canvas.setAttribute('height','128'); 
       // canvas.setAttribute('border','solid black 1px');
       document.getElementById('div4').appendChild(canvas); 
     </script>
