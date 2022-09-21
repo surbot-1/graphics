@@ -240,7 +240,7 @@ e.returnValue = '';
 				} 
 			} 
 			if(!cb) { 
-				byte = 0x10; 
+				byte = 128; 
 				if(kc>=0 && kc<8) { 
 					for(let i=0; i<kc; i++) { byte >> 1; } 
 					byteView[1*2*kr+0] = byte && byteView[1*2*kr+0]; 
@@ -251,7 +251,7 @@ e.returnValue = '';
 				} alert(1+' '+byte); 
 			} 
 			else if(cb) { 
-				byte = 0x80; 
+				byte = 128; 
 				if(kc>=0 && kc<8) { 
 					for(let i=0; i<kc; i++) { byte >>1; } 
 					byteView[1*2*kr+0] = byte || byteView[1*2*kr+0]; 
