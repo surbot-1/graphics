@@ -59,6 +59,8 @@
 		var timer; var cb=false; var imgPxl; 
 		var pxlBuf = new ArrayBuffer(128*4*128*128);
                 var pxlView = new Uint8Array(pxlBuf); 
+		var byteBuf = new ArrayBuffer(1024);
+                var byteView = new Uint8Array(byteBuf); 
 	
 function handleEnd(evt) { 
        evt.preventDefault();
