@@ -161,7 +161,7 @@ e.returnValue = '';
 	<script> 
 		
 	function readPad(x, y, t) { 
-		document.getElementById('div1').innerHTML += 'touched '+ byteView;  
+		document.getElementById('div1').innerHTML += 'touched ';  
 		
 		var tx=parseInt(touchx)-28; 
 		var ty=parseInt(touchy)-(1024+128); 
@@ -259,7 +259,8 @@ e.returnValue = '';
 			}
 		}
 		
-		function show(kc, kr, kw, kh, kl, kt) {
+		function show(kc, kr, kw, kh, kl, kt) { 
+			document.getElementById('div2').innerHTML = byteView;  
 			var kx=x+px+(kw+kl*2)*kc; 
 	                var ky=y+py+(kh+kt*2)*kr; 
 	                for (let i=0; i<kw*4*kh; i++) { 
