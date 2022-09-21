@@ -286,7 +286,7 @@ e.returnValue = '';
 			var imgData2 = ctx1.createImageData(128, 128);
 			for (let i=0; i<16*4*16; i++) { 
 				for (let j=0; j<8; j++) {
-				imgData1.data[i*8+j] = pxlView[i]; 
+				imgData2.data[i*8+j] = pxlView[i]; 
 				}
 			} 
 	                ctx1.putImageData(imgData2, 128, 0); 
