@@ -303,7 +303,7 @@ e.returnValue = '';
 			for(let i=0; i<1*2*16; i++) { 
 				var bh = byteView[i].toString(16).toUpperCase(); 
 				bh = bh.length < 2 ? '0'+ bh : bh; 
-				byte += '0x' + bh + ' ';
+				byte += '0x' + bh + ', ';
 			} 
 			document.getElementById('div2').innerHTML = '1: ' +byte; 
 		}
