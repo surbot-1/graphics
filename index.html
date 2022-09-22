@@ -267,7 +267,7 @@ e.returnValue = '';
 		}
 		
 		function show(kc, kr, kw, kh, kl, kt) { 
-			document.getElementById('div2').innerHTML = '3' +'<br>'+ (byteView).toString(16).toUpperCase() +'<br>';  
+			document.getElementById('div2').innerHTML = '1' +'<br>'+ (byteView).toString(16).toUpperCase() +'<br>';  
 			var kx=x+px+(kw+kl*2)*kc; 
 	                var ky=y+py+(kh+kt*2)*kr; 
 	                for (let i=0; i<kw*4*kh; i++) { 
@@ -292,8 +292,7 @@ e.returnValue = '';
 						imgData2.data[i+j+k+2] = pxlView[l+2]; 
 						imgData2.data[i+j+k+3] = pxlView[l+3]; 
 					} 
-				} 
-				l+=4; 
+				} // l+=4; 
 			} 
 	                ctx1.putImageData(imgData2, 128, 0); 
 		}
