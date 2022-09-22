@@ -298,17 +298,17 @@ e.returnValue = '';
 			} 
 	                ctx1.putImageData(imgData2, 128, 0); */ 
 			var imgData2 = ctx1.createImageData(48, 80); 
-			var b = 0; 
-			for (let i=0; i<16*4*3*16*5; i+=16*4*3*5) { 
-			for (let j=0; j<16*4*3; j+=4*3) { 
-				for (let k=0; k<16*4*3*5; k+=16*4*3) {  
-					for (let l=0; l<4*3; l+=4) { 
-						imgData2.data[i+j+k+l+0] = pxlView[b+0]; 
-						imgData2.data[i+j+k+l+1] = pxlView[b+1]; 
-						imgData2.data[i+j+k+l+2] = pxlView[b+2]; 
-						imgData2.data[i+j+k+l+3] = pxlView[b+3]; 
+			var bt = 0; var m=0,n=4,w=16,h=16,a=3,b=5;
+			for (let i=0; i<w*n*a*h*b; i+=w*n*a*b) { 
+			for (let j=0; j<w*n*a; j+=n*a) { 
+				for (let k=0; k<w*n*a*b; k+=w*n*a) {  
+					for (let l=0; l<n*a; l+=n) { 
+						imgData2.data[i+j+k+l+0] = pxlView[bt+0]; 
+						imgData2.data[i+j+k+l+1] = pxlView[bt+1]; 
+						imgData2.data[i+j+k+l+2] = pxlView[bt+2]; 
+						imgData2.data[i+j+k+l+3] = pxlView[bt+3]; 
 					} 
-				} b+=4; 
+				} bt+=n; 
 			}
 			} 
 	                ctx1.putImageData(imgData2, 128, 0); 
