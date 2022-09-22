@@ -297,12 +297,12 @@ e.returnValue = '';
 			}
 			} 
 	                ctx1.putImageData(imgData2, 128, 0); */ 
-			var imgData2 = ctx1.createImageData(128, 128); 
+			var imgData2 = ctx1.createImageData(48, 48); 
 			var n = 0; 
-			for (let i=0; i<16*4*8*16*8; i+=16*4*8*8) { 
-			for (let j=0; j<16*4*8; j+=4*8) { 
-				for (let k=0; k<16*4*8*8; k+=16*4*8) {  
-					for (let l=0; l<4*8; l+=4) { 
+			for (let i=0; i<16*4*3*16*3; i+=16*4*3*3) { 
+			for (let j=0; j<16*4*3; j+=4*3) { 
+				for (let k=0; k<16*4*3*3; k+=16*4*3) {  
+					for (let l=0; l<4*3; l+=4) { 
 						imgData2.data[i+j+k+l+0] = pxlView[n+0]; 
 						imgData2.data[i+j+k+l+1] = pxlView[n+1]; 
 						imgData2.data[i+j+k+l+2] = pxlView[n+2]; 
