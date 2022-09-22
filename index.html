@@ -301,10 +301,10 @@ e.returnValue = '';
 				'1' +'<br>'+ (byteView).toString(16).toUpperCase() +'<br>';  */ 
 			var byte = ''; 
 			for(let i=0; i<1*2*16; i++) { 
-				var bh = (byteView[i]).toString(16).toUpperCase(); 
+				var bh = byteView[i].toString(16).toUpperCase(); 
 				byte += '0x' + bh + ' ';
 			} 
-			document.getElementById('div2').innerHTML = byte; 
+			document.getElementById('div2').innerHTML = '1' +byte; 
 		}
 		
 		for (let j=0; j<rw; j++) { 
