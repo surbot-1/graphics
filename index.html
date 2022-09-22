@@ -288,10 +288,10 @@ e.returnValue = '';
 				for (let j=0; j<128*4*128; j+=128*4) { 
 				for (let k=0; k<128*4*8; k+=8*4) { 
 					for (let l=0; l<4*8; l+=4) { 
-					imgData2.data[j+k+l+0] = pxlView[l+0];
-					imgData2.data[j+k+l+1] = pxlView[l+1];
-					imgData2.data[j+k+l+2] = pxlView[l+2];
-					imgData2.data[j+k+l+3] = pxlView[l+3]; 
+					imgData2.data[j+k+l+0] = pxlView[i+0];
+					imgData2.data[j+k+l+1] = pxlView[i+1];
+					imgData2.data[j+k+l+2] = pxlView[i+2];
+					imgData2.data[j+k+l+3] = pxlView[i+3]; 
 					}
 				} 
 				}
