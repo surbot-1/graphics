@@ -286,7 +286,7 @@ e.returnValue = '';
 			var l = 0; 
 			for (let i=0; i<128*4*128; i+=128*4) { 
 				for (let j=0; j<128*4*8; j+=4*8) { 
-					for (let k=0; k<4*8; k+=4) {
+					for (let k=0; k<4; k+=4) {
 				imgData2.data[i+j+k+0] = pxlView[l+0]; 
 				imgData2.data[i+j+k+1] = pxlView[l+1]; 
 				imgData2.data[i+j+k+2] = pxlView[l+2]; 
