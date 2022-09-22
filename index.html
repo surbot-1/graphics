@@ -267,7 +267,7 @@ e.returnValue = '';
 		}
 		
 		function show(kc, kr, kw, kh, kl, kt) { 
-			document.getElementById('div2').innerHTML = '1' +'<br>'+ (byteView).toString(16).toUpperCase() +'<br>';  
+			document.getElementById('div2').innerHTML = '2' +'<br>'+ (byteView).toString(16).toUpperCase() +'<br>';  
 			var kx=x+px+(kw+kl*2)*kc; 
 	                var ky=y+py+(kh+kt*2)*kr; 
 	                for (let i=0; i<kw*4*kh; i++) { 
@@ -285,7 +285,7 @@ e.returnValue = '';
 			var imgData2 = ctx1.createImageData(128, 128); 
 			var l = 0; 
 			for (let i=0; i<128*4*128; i+=4*8) { 
-				for (let j=0; j<128*4*8; j+=128*4) {  
+				for (let j=0; j<128*4*4; j+=128*4) {  
 					for (let k=0; k<4*8; k+=4) { 
 						imgData2.data[i+j+k+0] = pxlView[l+0]; 
 						imgData2.data[i+j+k+1] = pxlView[l+1]; 
