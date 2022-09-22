@@ -297,7 +297,7 @@ e.returnValue = '';
 			}
 			} 
 	                ctx1.putImageData(imgData2, 128, 0); */ 
-			/* var imgData2 = ctx1.createImageData(48, 80); 
+			var imgData2 = ctx1.createImageData(48, 80); 
 			var bt = 0; var m=0,n=4,w=16,h=16,a=3,b=5;
 			for (let i=0; i<w*n*a*h*b; i+=w*n*a*b) { 
 			for (let j=0; j<w*n*a; j+=n*a) { 
@@ -311,12 +311,12 @@ e.returnValue = '';
 				} bt+=n; 
 			}
 			} 
-	                ctx1.putImageData(imgData2, 128, 0); */ 
-			var imgData2 = ctx1.createImageData(48, 80); 
+	                ctx1.putImageData(imgData2, 128, 0); 
+			/* var imgData2 = ctx1.createImageData(48, 80); 
 			for(let i=0; i<48*4*80; i++) {
 			imgData2.data[i]=zoomPixel(pxlView,16,16,3,5)[i]; 
 			} 
-			ctx1.putImageData(imgData2, 128,0); alert('1'); 
+			ctx1.putImageData(imgData2, 128,0); alert('1'); */ 
 			/* document.getElementById('div2').innerHTML = 
 				'1' +'<br>'+ (byteView).toString(16).toUpperCase() +'<br>';  */ 
 			var byte = ''; 
