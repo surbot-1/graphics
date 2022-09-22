@@ -315,6 +315,7 @@ e.returnValue = '';
 			} 
 	                ctx1.putImageData(imgData2, 128, 0); */ 
 			var imgData2 = ctx1.createImageData(48, 80); 
+			zoomPixel(16,16,3,5); 
 			for(let i=0; i<48*4*80; i++) {
 			imgData2.data[i]=zpxlView[i]; 
 			} 
