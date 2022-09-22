@@ -66,6 +66,8 @@
 		var timer; 
 		var pxlBuf = new ArrayBuffer(16*4*16*128);
                 var pxlView = new Uint8Array(pxlBuf); 
+		var zpxlBuf = new ArrayBuffer(128*4*128);
+                var zpxlView = new Uint8Array(zpxlBuf); 
 		var byteBuf = new ArrayBuffer(1*2*16);
                 var byteView = new Uint8Array(byteBuf); 
 		for(let i=0; i<16*4*16; i+=4) { 
@@ -314,7 +316,7 @@ e.returnValue = '';
 	                ctx1.putImageData(imgData2, 128, 0); */ 
 			var imgData2 = ctx1.createImageData(48, 80); 
 			for(let i=0; i<48*4*80; i++) {
-			imgData2.data[i]=zoomPixel(pxlView,16,16,3,5)[i]; 
+			imgData2.data[i]=zpxlView[i]; 
 			} 
 			ctx1.putImageData(imgData2, 128,0); alert('1'); 
 			/* document.getElementById('div2').innerHTML = 
@@ -345,10 +347,10 @@ e.returnValue = '';
     </script> 
 	  
     <script>
-	    function zoomPixel(pxlView,w,h,a,b) { 
+	    function zoomPixel(w,h,a,b) { 
 			var bt = 0; var n=4; 
-		var zpxlBuf = new ArrayBuffer(w*4*a*h*b);
-                var zpxlView = new Uint8Array(zpxlBuf); 
+		// var zpxlBuf = new ArrayBuffer(w*4*a*h*b);
+                // var zpxlView = new Uint8Array(zpxlBuf); 
 			for (let i=0; i<w*n*a*h*b; i+=w*n*a*b) { 
 			for (let j=0; j<w*n*a; j+=n*a) { 
 				for (let k=0; k<w*n*a*b; k+=w*n*a) {  
@@ -360,7 +362,7 @@ e.returnValue = '';
 					} 
 				} bt+=n; 
 			}
-			} return zpxlView; 
+			} // return zpxlView; 
 	    }
 	    
     </script>
