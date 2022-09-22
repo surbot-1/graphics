@@ -352,7 +352,9 @@ e.returnValue = '';
 				bh = bh.length < 2 ? '0'+ bh : bh; 
 				byte += '0x' + bh + ',';
 			} 
-			document.getElementById('div2').innerHTML = byte.substring(0,40)+'<br>'+byte.substring(40,80) ; 
+			document.getElementById('div2').innerHTML = 
+				byte.substring(0,40)+'<br>'+byte.substring(40,80)+'<br>'+
+			byte.substring(80,120)+'<br>'+byte.substring(120,160); 
 		}
 		
 		for (let j=0; j<rw; j++) { 
