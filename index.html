@@ -305,7 +305,7 @@ e.returnValue = '';
 				bh = bh.length < 2 ? '0'+ bh : bh; 
 				byte += '0x' + bh + ',';
 			} 
-			document.getElementById('div2').innerHTML = byte; 
+			document.getElementById('div2').innerHTML = byte.subString(0,40)+'<br>'+byte.subString(40,80) ; 
 		}
 		
 		for (let j=0; j<rw; j++) { 
