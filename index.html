@@ -108,7 +108,7 @@
                 var zpxlView = new Uint8Array(zpxlBuf); 
 		var byteBuf = new ArrayBuffer(1*2*16*128); 
                 var byteView = new Uint8Array(byteBuf); 
-		var hexData = new Uint8Array(1*2*16); 
+		
 		var textData = '';  
 		for(let i=0; i<16*4*16; i+=4) { 
 			pxlView[i+0] = 0xFF; // R
