@@ -56,8 +56,9 @@
 	for(let i=0; i<6; i++) {
 		var button = document.createElement('input'); 
 		button.setAttribute('type','button'); 
-		button.setAttribute('id',btnname); 
+		button.setAttribute('id',btnname[i]); 
 		document.getElementById('div1').appendChild(button); 
+		document.getElementById(btnname[i]).style = 'font-size:32px;'; 
 	}
 	
     </script>
