@@ -18,8 +18,13 @@ function saveAsHex() { // alert('1');
 } 
 
 function saveAsText() { 
-  var filename = document.getElementById('fname').value;
-  var text = textData;
+  var filename = document.getElementById('fname').value; 
+  var text = ''; 
+  for(let i=0; i<1*2*16; i++) { 
+    var bh = byteView[i].toString(16).toUpperCase(); 
+    bh = bh.length < 2 ? '0'+ bh : bh; 
+    text += '0x' + bh + ','; 
+  } 
   var c = document.createElement('a');
   c.download = filename + '.txt';
 
