@@ -33,7 +33,20 @@ function saveAsText() {
   c.click(); 
 } 
 
-function saveAsRaw() {}
+function saveAsRaw() { 
+  var filename = document.getElementById('fname').value; 
+  var hexBuf = new ArrayBuffer(16*4*16); 
+  var hexView = new Uint8Array(hexBuf); 
+  for(let i=0; i<16*4*16; i++) { 
+    hexView[i] = pxlView[i]; 
+  }
+  var c = document.createElement('a');
+  c.download = filename + '.bin';
+
+  var t = new Blob([hexBuf], {type: 'application/octet-stream'});
+  c.href = window.URL.createObjectURL(t);
+  c.click(); 
+}
 
 function saveAsImage() {}
 
