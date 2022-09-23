@@ -4,7 +4,7 @@ function selectFile() {
 
 function saveAsHex() { 
   var filename = document.getElementById('fname').value;
-  var hex = hexData.buffer;
+  var hex = hexData;
   var c = document.createElement('a');
   c.download = filename + '.hex';
 
@@ -13,7 +13,7 @@ function saveAsHex() {
   c.click(); 
 } 
 
-function saveAsText() { alert('2'); 
+function saveAsText() { 
   var filename = document.getElementById('fname').value;
   var text = textData;
   var c = document.createElement('a');
