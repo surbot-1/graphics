@@ -4,7 +4,7 @@ function selectFile() {
 
 function saveAsHex() { 
   var filename = document.getElementById('fname').value;
-  var hex = hexData;
+  var hex = hexData.buffer;
   var c = document.createElement('a');
   c.download = filename + '.hex';
 
