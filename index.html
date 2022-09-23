@@ -405,7 +405,6 @@ e.returnValue = '';
 			
 			var byte = ''; 
 			for(let i=0; i<1*2*16; i++) { 
-				hexData[i] = byteView[i]; 
 				var bh = byteView[i].toString(16).toUpperCase(); 
 				bh = bh.length < 2 ? '0'+ bh : bh; 
 				byte += '0x' + bh + ',';
