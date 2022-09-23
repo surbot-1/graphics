@@ -73,12 +73,13 @@
 		var button = document.createElement('button'); 
 		button.setAttribute('type','button'); 
 		button.setAttribute('id',btnid[i]); 
-		button.setAttribute('click',fclick[i]); 
+		// button.setAttribute('onclick',fclick[i]); 
 		var text = document.createTextNode(btnname[i]); 
 		button.appendChild(text);
 		document.getElementById('div1').appendChild(button); 
 		document.getElementById(btnid[i]).style = 
 			'margin-left:8px;margin-top:8px;font-size:32px;'; 
+		button.addEventListener('click',fclick[i]); 
 	}
 	
     </script>
@@ -134,7 +135,7 @@ function handleEnd(evt) {
        var  y = touches[0].pageY; touchy = y;
        var  tend = 3;             touch  = tend;  // touchend
       }
-      canvas.addEventListener("touchend", handleEnd, false);	
+      canvas.addEventListener('touchend', handleEnd, false);	
 	
 </script> 
 	
