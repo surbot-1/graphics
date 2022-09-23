@@ -108,8 +108,6 @@
                 var zpxlView = new Uint8Array(zpxlBuf); 
 		var byteBuf = new ArrayBuffer(1*2*16*128); 
                 var byteView = new Uint8Array(byteBuf); 
-		
-		var textData = '';  
 		for(let i=0; i<16*4*16; i+=4) { 
 			pxlView[i+0] = 0xFF; // R
                         pxlView[i+1] = 0xFF; // G
@@ -403,16 +401,15 @@ e.returnValue = '';
 			/* document.getElementById('div2').innerHTML = 
 				'1' +'<br>'+ (byteView).toString(16).toUpperCase() +'<br>';  */ 
 			
-			var byte = ''; 
+			var text = ''; 
 			for(let i=0; i<1*2*16; i++) { 
 				var bh = byteView[i].toString(16).toUpperCase(); 
 				bh = bh.length < 2 ? '0'+ bh : bh; 
-				byte += '0x' + bh + ',';
+				text += '0x' + bh + ',';
 			} 
-			textData = byte; 
 			document.getElementById('div2').innerHTML = '<br>' +
-				byte.substring(0,40)+'<br>'+byte.substring(40,80)+'<br>'+
-			byte.substring(80,120)+'<br>'+byte.substring(120,160); 
+				text.substring(0,40)+'<br>'+text.substring(40,80)+'<br>'+
+			text.substring(80,120)+'<br>'+text.substring(120,160); 
 		}
 		
 		for (let j=0; j<rw; j++) { 
