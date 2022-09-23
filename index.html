@@ -49,11 +49,20 @@
 	document.getElementById('div1').innerHTML = ' ' + 'File Name '; 
 	var input = document.createElement('input'); 
 	input.setAttribute('type','text');  
-	input.setAttribute('id','filename'); 
+	input.setAttribute('id','fname'); 
 	input.setAttribute('placeHolder','File Name'); 
 	document.getElementById('div1').appendChild(input); 
-	document.getElementById('filename').style = 
+	document.getElementById('fname').style = 
 		'margin-left:8px;margin-top:24px;font-size:32px;'; 
+	   
+	var button = document.createElement('button'); 
+	button.setAttribute('type','button'); 
+	button.setAttribute('id','sfile'); 
+	var text = document.createTextNode('Select File'); 
+	button.appendChild(text); 
+	document.getElementById('div1').appendChild(button); 
+	document.getElementById('sfile').style = 
+		'margin-left:24px;margin-top:24px;font-size:32px;'; 
 	document.getElementById('div1').innerHTML += '<br>'; 
 	
 	var btnname = ['Back','Close','SaveAsHex','SaveAsText','SaveAsRaw','SaveAsImage']; 
