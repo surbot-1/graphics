@@ -1,6 +1,6 @@
 function saveAsHex() {} 
 
-function saveAsText() { 
+function saveAsText() { alert('1'); 
   var filename = document.getElementById('fname').value;
   var text = textData;
   var c = document.createElement('a');
