@@ -52,7 +52,8 @@
 	input.setAttribute('placeHolder','File Name'); 
 	document.getElementById('div1').appendChild(input); 
 	document.getElementById('textfield').style = 
-		'margin-left:8px;margin-top:24px;font-size:32px;';
+		'margin-left:8px;margin-top:24px;font-size:32px;'; 
+	document.write('<br>'); 
 	
 	var btnname = ['SaveAsHex','SaveAsTxt','SaveAsRaw','SaveAsImage','Back','Close']; 
 	for(let i=0; i<6; i++) {
@@ -63,7 +64,7 @@
 		button.appendChild(text);
 		document.getElementById('div1').appendChild(button); 
 		document.getElementById(btnname[i]).style = 
-			'margin-left:8px;margin-top:24px;font-size:32px;'; 
+			'margin-left:8px;margin-top:8px;font-size:32px;'; 
 	}
 	
     </script>
