@@ -68,18 +68,18 @@
 	
 	var btnname = ['Back','Close','SaveAsHex','SaveAsText','SaveAsRaw','SaveAsImage']; 
 	var btnid = ['bback','bclose','bhex','btext','braw','bimage']; 
-	var fclick = ['back','close','saveAsHex','saveAsText','saveAsRaw','saveAsImage']; 
+	var fclick = ['back()','close()','saveAsHex()','saveAsText()','saveAsRaw()','saveAsImage()']; 
 	for(let i=0; i<6; i++) {
 		var button = document.createElement('button'); 
 		button.setAttribute('type','button'); 
 		button.setAttribute('id',btnid[i]); 
-		// button.setAttribute('onclick',fclick[i]); 
+		button.setAttribute('onclick',fclick[i]); 
 		var text = document.createTextNode(btnname[i]); 
 		button.appendChild(text);
 		document.getElementById('div1').appendChild(button); 
 		document.getElementById(btnid[i]).style = 
 			'margin-left:8px;margin-top:8px;font-size:32px;'; 
-		document.getElementById(btnid[i]).addEventListener('click',fclick[i]); 
+		// ocument.getElementById(btnid[i]).addEventListener('click',fclick[i]); 
 	}
 	
     </script>
