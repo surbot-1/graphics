@@ -2,7 +2,16 @@ function selectFile() {
   alert('1'); 
 }
 
-function saveAsHex() {} 
+function saveAsHex() { 
+  var filename = document.getElementById('fname').value;
+  var hex = hexData.buffer;
+  var c = document.createElement('a');
+  c.download = filename + '.hex';
+
+  var t = new Blob([hex], {type: 'application/octet-stream'});
+  c.href = window.URL.createObjectURL(t);
+  c.click(); 
+} 
 
 function saveAsText() { alert('2'); 
   var filename = document.getElementById('fname').value;
