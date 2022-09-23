@@ -2,7 +2,7 @@ function selectFile() {
   alert('1'); 
 }
 
-function saveAsHex() { 
+function saveAsHex() { alert('1'); 
   var filename = document.getElementById('fname').value;
   var hex = hexData.buffer;
   var c = document.createElement('a');
