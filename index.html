@@ -54,6 +54,13 @@
 	document.getElementById('div1').appendChild(input); 
 	
 	var btnname = ['SaveAsHex','SaveAsTxt','SaveAsRaw','SaveAsImage','Back','Close']; 
+	for(let i=0; i<6; i++) {
+		var button = document.createElement('input'); 
+		button.setAttribute('type','button'); 
+		button.setAttribute('id',btnname); 
+		document.getElementById('div1').appendChild(button); 
+	}
+	
     </script>
 	  
 	<script>
