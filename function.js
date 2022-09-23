@@ -3,12 +3,16 @@ function selectFile() {
 }
 
 function saveAsHex() { // alert('1'); 
-  var filename = document.getElementById('fname').value;
-  var hex = hexData.buffer;
+  var filename = document.getElementById('fname').value; 
+  var hexBuf = new ArrayBuffer(1*2*16); 
+  var hexView = new Uint8Array(hexBuf); 
+  for(let i=0; i<1*2*16; i++) { 
+    hexView[i] = byteView[i]; 
+  }
   var c = document.createElement('a');
   c.download = filename + '.hex';
 
-  var t = new Blob([hex], {type: 'application/octet-stream'});
+  var t = new Blob([hexBuf], {type: 'application/octet-stream'});
   c.href = window.URL.createObjectURL(t);
   c.click(); 
 } 
