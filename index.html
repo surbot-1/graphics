@@ -55,15 +55,16 @@
 		'margin-left:8px;margin-top:24px;font-size:32px;'; 
 	document.getElementById('div1').innerHTML += '<br>'; 
 	
-	var btnname = ['SaveAsHex','SaveAsTxt','SaveAsRaw','SaveAsImage','Back','Close']; 
+	var btnname = ['Back','Close','SaveAsHex','SaveAsTxt','SaveAsRaw','SaveAsImage']; 
+	var btnid = ['bback','bclose','bhex','btxt','braw','bimage']; 
 	for(let i=0; i<6; i++) {
 		var button = document.createElement('button'); 
 		button.setAttribute('type','button'); 
-		button.setAttribute('id',btnname[i]); 
+		button.setAttribute('id',btnid[i]); 
 		var text = document.createTextNode(btnname[i]); 
 		button.appendChild(text);
 		document.getElementById('div1').appendChild(button); 
-		document.getElementById(btnname[i]).style = 
+		document.getElementById(btnid[i]).style = 
 			'margin-left:8px;margin-top:8px;font-size:32px;'; 
 	}
 	
