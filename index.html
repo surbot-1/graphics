@@ -58,6 +58,8 @@
 		var button = document.createElement('button'); 
 		button.setAttribute('type','button'); 
 		button.setAttribute('id',btnname[i]); 
+		var text = document.createTextNode(btnname[i]); 
+		button.appendChild(text);
 		document.getElementById('div1').appendChild(button); 
 		document.getElementById(btnname[i]).style = 'font-size:32px;'; 
 	}
