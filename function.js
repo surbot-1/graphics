@@ -1,6 +1,10 @@
+function selectFile() { 
+  alert('1'); 
+}
+
 function saveAsHex() {} 
 
-function saveAsText() { alert('1'); 
+function saveAsText() { alert('2'); 
   var filename = document.getElementById('fname').value;
   var text = textData;
   var c = document.createElement('a');
