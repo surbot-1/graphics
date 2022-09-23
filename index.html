@@ -49,8 +49,7 @@
 	var input = document.createElement('input'); 
 	input.setAttribute('type','text');  
 	input.setAttribute('id','textfield'); 
-	input.setAttribute('placeHolder','File Name');  
-	input.setAttribute('font-size','32');  
+	input.setAttribute('placeHolder','File Name'); 
 	document.getElementById('div1').appendChild(input); 
 	
 	var btnname = ['SaveAsHex','SaveAsTxt','SaveAsRaw','SaveAsImage','Back','Close']; 
@@ -74,6 +73,8 @@
 			'width:1024px;height:128px;margin-left:28px;backgroung:#E0E0E0;';
 		document.getElementById('div4').style = 
 			'width:1024px;height:1024px;margin-left:28px;backgroung:#E0E0E0;';
+		document.getElementById('textfield').style = 
+			'font-size:32px;';
 	</script>
 	  
 	<script> 
