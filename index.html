@@ -51,10 +51,11 @@
 	input.setAttribute('id','textfield'); 
 	input.setAttribute('placeHolder','File Name'); 
 	document.getElementById('div1').appendChild(input); 
+	document.getElementById('textfield').style = 'font-size:32px;';
 	
 	var btnname = ['SaveAsHex','SaveAsTxt','SaveAsRaw','SaveAsImage','Back','Close']; 
 	for(let i=0; i<6; i++) {
-		var button = document.createElement('input'); 
+		var button = document.createElement('button'); 
 		button.setAttribute('type','button'); 
 		button.setAttribute('id',btnname[i]); 
 		document.getElementById('div1').appendChild(button); 
@@ -74,8 +75,7 @@
 			'width:1024px;height:128px;margin-left:28px;backgroung:#E0E0E0;';
 		document.getElementById('div4').style = 
 			'width:1024px;height:1024px;margin-left:28px;backgroung:#E0E0E0;';
-		document.getElementById('textfield').style = 
-			'font-size:32px;';
+		
 	</script>
 	  
 	<script> 
