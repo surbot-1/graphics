@@ -51,7 +51,7 @@ function saveAsRaw() {
 function saveAsImage() {  
   alert('1'); 
   var c = document.createElement('canvas'); 
-  c.id = 'cnv1'; 
+  c.setAttribute('id','cnv1') ; 
   document.body.appendChild(c);
   var cnv = document.getElementById('cnv1'); 
   var ctx = cnv.getContext('2d'); 
