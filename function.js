@@ -24,7 +24,7 @@ function saveAsText() {
     var bh = byteView[i].toString(16).toUpperCase(); 
     bh = bh.length < 2 ? '0'+ bh : bh; 
     text += '0x' + bh + ','; 
-  } text += '\n' + 'ABC'; 
+  } 
   var c = document.createElement('a');
   c.download = filename + '.txt';
 
