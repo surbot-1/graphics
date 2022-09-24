@@ -49,7 +49,7 @@ function saveAsRaw() {
 }
 
 function saveAsImage() {  
-  alert('4'); 
+  // alert('4'); 
   var c = document.createElement('canvas'); 
   c.setAttribute('id','cnv1') ; 
   c.setAttribute('width','16') ; 
