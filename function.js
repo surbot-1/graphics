@@ -35,10 +35,13 @@ function saveAsText() {
 
 function saveAsRaw() { 
   var filename = document.getElementById('fname').value; 
-  var hexBuf = new ArrayBuffer(16*4*16); 
+  var hexBuf = new ArrayBuffer(32+16*4*16); 
   var hexView = new Uint8Array(hexBuf); 
+  for(let i=0; i<32; i++) {
+    hexView[i] = 0x00; 
+  } hexView[1]=16;  hexView[3]=16;
   for(let i=0; i<16*4*16; i++) { 
-    hexView[i] = pxlView[i]; 
+    hexView[32+i] = pxlView[i]; 
   }
   var c = document.createElement('a');
   c.download = filename + '.bin';
