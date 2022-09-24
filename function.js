@@ -49,9 +49,11 @@ function saveAsRaw() {
 }
 
 function saveAsImage() {  
-  alert('1'); 
+  alert('2'); 
   var c = document.createElement('canvas'); 
   c.setAttribute('id','cnv1') ; 
+  c.setAttribute('width','16') ; 
+  c.setAttribute('height','16') ; 
   document.body.appendChild(c);
   var cnv = document.getElementById('cnv1'); 
   var ctx = cnv.getContext('2d'); 
