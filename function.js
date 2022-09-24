@@ -49,7 +49,6 @@ function saveAsRaw() {
 }
 
 function saveAsImage() {  
-  // alert('4'); 
   var c = document.createElement('canvas'); 
   c.setAttribute('id','cnv1') ; 
   c.setAttribute('width','16') ; 
@@ -64,7 +63,8 @@ function saveAsImage() {
   ctx.putImageData(imgData, 0, 0); 
   
   let filename = document.getElementById('fname').value; 
-  let canvasImage = document.getElementById('cnv1').toDataURL('image/png');
+  let canvasImage = document.getElementById('cnv1').toDataURL('image/png'); 
+  c.remove(); 
     
   // this can be used to download any image from webpage to local disk
   let xhr = new XMLHttpRequest();
@@ -76,7 +76,7 @@ function saveAsImage() {
       a.style.display = 'none';
       document.body.appendChild(a);
       a.click();
-      a.remove();  c.remove(); 
+      a.remove(); 
     };
     xhr.open('GET', canvasImage); // This is to download the canvas Image
     xhr.send();
