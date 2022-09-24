@@ -431,8 +431,6 @@ e.returnValue = '';
     <script>
 	    function zoomPixel(w,h,a,b) { 
 			var bt = 0; var n=4; 
-		// var zpxlBuf = new ArrayBuffer(w*4*a*h*b);
-                // var zpxlView = new Uint8Array(zpxlBuf); 
 			for (let i=0; i<w*n*a*h*b; i+=w*n*a*b) { 
 			for (let j=0; j<w*n*a; j+=n*a) { 
 				for (let k=0; k<w*n*a*b; k+=w*n*a) {  
@@ -444,7 +442,7 @@ e.returnValue = '';
 					} 
 				} bt+=n; 
 			}
-			} // return zpxlView; 
+			} 
 	    }
 	    
     </script>
