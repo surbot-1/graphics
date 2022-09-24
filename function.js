@@ -49,8 +49,18 @@ function saveAsRaw() {
 }
 
 function saveAsImage() { 
+  var c = document.createElement('canvas'); 
+  c.id = 'cnv1'; 
+  var cnv = document.getElementById('cnv1'); 
+  var ctx = cnv.getContext('2d'); 
+  var imgData = ctx.createImageData(16, 16); 
+  for(let i=0; i<16*4*16; i++) {
+    imgData.data[i] = pxlView[i]; 
+  } 
+  ctx.putImageData(imgData, 0, 0); 
+  
   let filename = document.getElementById('fname').value; 
-  let canvasImage = document.getElementById('canv').toDataURL('image/png');
+  let canvasImage = document.getElementById('cnv1').toDataURL('image/png');
     
   // this can be used to download any image from webpage to local disk
   let xhr = new XMLHttpRequest();
