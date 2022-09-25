@@ -11,6 +11,7 @@ function selectFile() {
         reader.addEventListener('load', function () {
             var text = reader.result; 
             textToHex(text); 
+            drawKeypad(0,0,0); 
         }, false);
         if (file) { 
           reader.readAsText(file);
