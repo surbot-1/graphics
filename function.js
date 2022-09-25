@@ -1,5 +1,5 @@
 function selectFile() { 
-  alert('1');  
+  alert('5');  
   var ele = document.createElement('input'); 
   ele.setAttribute('type','file'); 
   ele.setAttribute('id','file'); 
@@ -41,7 +41,7 @@ function textToHex(txt) {
   } 
   for(let i=0; i<32; i++) {
     byteView[i] = view[2*i+0]*16 + view[2*i+1]; 
-  } alert(byteView); /*
+  } alert(byteView); 
   var byte = ['0x80','0x40','0x20','0x10','0x08','0x04','0x02','0x01']; 
   for(let i=0; i<32; i++) {
     for(let j=0; j<8; j++) {
@@ -76,7 +76,7 @@ function textToHex(txt) {
         }
       }
     }
-  } */ 
+  } 
 } 
 
 function putText(fname, txt) {
