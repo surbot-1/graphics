@@ -115,8 +115,15 @@ function putKeypad() {
   }  
 }
 
-function putImage() {
-  
+function putImage() { 
+  for(let i=1; i<=8; i++) { 
+    imgData = ctx.createImageData(16*j, 16*j); 
+    zoomPixel(16,16,i,i); 
+    for(let j=0; i<16*i*4*16*i; j++) { 
+      imgData.data[j]=zpxlView[j]; 
+    }  
+    ctx.putImageData(imgData, 128*(i-1),0); 
+  }
 } 
 
 function saveAsHex() { 
