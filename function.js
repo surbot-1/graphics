@@ -25,7 +25,9 @@ function readFile(txt) {
     text += txt.charAt(i+2)+txt.charAt(i+3);
   } // Array.from(text); 
   var buffer = Buffer.from(text, 'hex'); 
-  var length = Buffer.byteLength(buffer, 'hex'); 
+  // var length = Buffer.byteLength(buffer, 'hex'); 
+  var view = new Uint8Array(buffer); 
+  alert(view); 
 }
 
 function saveAsHex() { 
