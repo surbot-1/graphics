@@ -116,7 +116,15 @@
 		} 
 		for(let i=0; i<1*2*16; i++) { 
 			byteView[i] = 0x00; // byte
-		} 
+		}   
+		var keyBuf = new ArrayBuffer(kw*4*kh*cl*rw);
+                var keyView = new Uint8Array(keyBuf); 
+	for (let i=0; i<(60*4*60*16*16); i+=4) { 
+            keyView[i+0] = 0xFF; // R
+            keyView[i+1] = 0xFF; // G
+            keyView[i+2] = 0xFF; // B
+            keyView[i+3] = 0xFF; // A
+        } 
 		
 	</script> 
 	  
@@ -176,14 +184,14 @@ e.returnValue = '';
         var kl=2; var kt=2; 
         var kw=60; var kh=60; 
         
-        var keyBuf = new ArrayBuffer(kw*4*kh*cl*rw);
+        /* var keyBuf = new ArrayBuffer(kw*4*kh*cl*rw);
         var keyView = new Uint8Array(keyBuf); 
 	for (let i=0; i<(kw*4*kh*cl*rw); i+=4) { 
             keyView[i+0] = 0xFF; // R
             keyView[i+1] = 0xFF; // G
             keyView[i+2] = 0xFF; // B
             keyView[i+3] = 0xFF; // A
-        } 
+        } */ 
   
         var cnv = document.getElementById('canvas'); 
         var ctx = cnv.getContext('2d'); 
@@ -225,14 +233,14 @@ e.returnValue = '';
                 var kw=60; var kh=60; 
 		var b=false; 
 		
-		var keyBuf = new ArrayBuffer(kw*4*kh*cl*rw);
+		/* var keyBuf = new ArrayBuffer(kw*4*kh*cl*rw);
                 var keyView = new Uint8Array(keyBuf); 
 		for (let i=0; i<(kw*4*kh*cl*rw); i+=4) { 
                     keyView[i+0] = 0x40; // R
                     keyView[i+1] = 0x40; // G
                     keyView[i+2] = 0xFF; // B
                     keyView[i+3] = 0xFF; // A
-                }
+                } */ 
 	
                 var cnv = document.getElementById('canvas'); 
                 var ctx = cnv.getContext('2d'); 
@@ -310,11 +318,10 @@ e.returnValue = '';
 		}
 		
 		function show(kc, kr, kw, kh, kl, kt) { 
-			// document.getElementById('div2').innerHTML = '1' +'<br>'+ (byteView).toString(16).toUpperCase() +'<br>';  
 			var kx=x+px+(kw+kl*2)*kc; 
 	                var ky=y+py+(kh+kt*2)*kr; 
 	                for (let i=0; i<kw*4*kh; i++) { 
-				imgData.data[i] = imgView[kw*4*kh*(cl*kr+kc)+i]; 
+				imgData.data[i] = keyView[kw*4*kh*(cl*kr+kc)+i]; 
 			} 
 	                ctx.putImageData(imgData, kx+kl, ky+kt); 
 			
