@@ -1,5 +1,5 @@
 function selectFile() { 
-  alert('1');  
+  alert('2');  
   var ele = document.createElement('input'); 
   ele.setAttribute('type','file'); 
   ele.setAttribute('id','file'); 
@@ -44,7 +44,7 @@ function textToHex(txt) {
   } alert(byteView); 
   var byte = ['0x80','0x40','0x20','0x10','0x08','0x04','0x02','0x01']; 
   for(let i=0; i<32; i++) {
-    for(let j=0; j<8; j++) {
+    for(let j=0; j<8; j++) { alert(byteView[i]&&byte[j]);
       if(byteView[i] && byte[j]) { 
         pxlView[i*32+j*4+0] = 0x40; //R
         pxlView[i*32+j*4+1] = 0x40; //G
