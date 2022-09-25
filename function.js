@@ -1,5 +1,5 @@
 function selectFile() { 
-  alert('5');  
+  alert('1');  
   var ele = document.createElement('input'); 
   ele.setAttribute('type','file'); 
   ele.setAttribute('id','file'); 
@@ -218,7 +218,7 @@ function saveAsImage() {
 
 function saveAsBase64() {}
 
-function zoomPixel1(w,h,a,b) { 
+function zoomPixel(w,h,a,b) { 
   var bt = 0; var n=4; 
   for (let i=0; i<w*n*a*h*b; i+=w*n*a*b) { 
     for (let j=0; j<w*n*a; j+=n*a) { 
