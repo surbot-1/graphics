@@ -117,7 +117,7 @@
 		for(let i=0; i<1*2*16; i++) { 
 			byteView[i] = 0x00; // byte
 		}   
-		var keyBuf = new ArrayBuffer(kw*4*kh*cl*rw);
+		var keyBuf = new ArrayBuffer(60*4*60*16*16);
                 var keyView = new Uint8Array(keyBuf); 
 	for (let i=0; i<(60*4*60*16*16); i+=4) { 
             keyView[i+0] = 0xFF; // R
