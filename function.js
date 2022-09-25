@@ -1,5 +1,5 @@
 function selectFile() { 
-  alert('1');  
+  alert('2');  
   var ele = document.createElement('input'); 
   ele.setAttribute('type','file'); 
   ele.setAttribute('id','file'); 
@@ -30,7 +30,7 @@ function readText(txt) {
   for(let i=0; i<32*2; i++) { 
     for(let j=0; j<16; j++) { 
       if(text.charAt(j) == hexChar[j]) { 
-        view[i] = j; break; 
+        view[i] = j; alert(j); 
       }
     }
   } 
