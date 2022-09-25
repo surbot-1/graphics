@@ -53,6 +53,24 @@ function textToHex(txt) {
       }
     }
   } 
+  for(let i=0; i<32; i++) {
+    for(let j=0; j<8; j++) {
+      if(byteView[i] && byte[j]) { 
+        for(let k=0; k<60*4*60; k+=4) {
+          keyView[i*60*4*60*8+j*60*4*60+k*4+0] = 0x40; //R
+          keyView[i*60*4*60*8+j*60*4*60+k*4+0] = 0x40; //G
+          keyView[i*60*4*60*8+j*60*4*60+k*4+0] = 0xFF; //B
+          keyView[i*60*4*60*8+j*60*4*60+k*4+0] = 0xFF; //A
+        }
+      } else {
+        for(let k=0; k<60*4*60; k+=4) {
+          keyView[i*60*4*60*8+j*60*4*60+k*4+0] = 0xFF; //R
+          keyView[i*60*4*60*8+j*60*4*60+k*4+0] = 0xFF; //G
+          keyView[i*60*4*60*8+j*60*4*60+k*4+0] = 0xFF; //B
+          keyView[i*60*4*60*8+j*60*4*60+k*4+0] = 0xFF; //A
+      }
+    }
+  }
 }
 
 function saveAsHex() { 
