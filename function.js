@@ -1,12 +1,12 @@
 function selectFile() { 
-  alert('1');  
+  alert('2');  
   var ele = document.createElement('input'); 
   ele.setAttribute('type','file'); 
   ele.setAttribute('id','file'); 
   // ele.setAttribute('onchange','readFile()'); 
   // ele.setAttribute('style','display:none'); 
   ele.addEventListener('change', function () { 
-        var file = ele.files[0]; 
+        var file = ele.files[0]; alert(file.name);
         var reader = new FileReader();
         reader.addEventListener('load', function () {
             var text = reader.result; 
