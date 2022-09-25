@@ -1,5 +1,5 @@
 function selectFile() { 
-  alert('4');  
+  alert('5');  
   var ele = document.createElement('input'); 
   ele.setAttribute('type','file'); 
   ele.setAttribute('id','file'); 
@@ -23,7 +23,7 @@ function readText(txt) {
   var text = ''; alert(txt); 
   for(let i=0; i<txt.length; i+=5) {
     text += txt.charAt(i+2)+txt.charAt(i+3);
-  } // Array.from(text); 
+  } alert(text); // Array.from(text); 
   var buffer = Buffer.from(text, 'hex'); 
   // var length = Buffer.byteLength(buffer, 'hex'); 
   var view = new Uint8Array(buffer); 
