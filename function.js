@@ -1,5 +1,5 @@
 function selectFile() { 
-  alert('1');  
+  alert('2');  
   var ele = document.createElement('input'); 
   ele.setAttribute('type','file'); 
   ele.setAttribute('id','file'); 
@@ -81,7 +81,9 @@ function textToHex(txt) {
 
 function putText(fname, txt) {
   document.getElementById('fname').value = fname; 
-  document.getElementById('div2').innerHTML = '<br>' + txt; 
+  document.getElementById('div2').innerHTML = '<br>' + 
+    txt.substring(0,40)+'<br>'+txt.substring(40,80)+'<br>'+
+    txt.substring(40,120)+'<br>'+txt.substring(120,160); 
 }
 
 function putKeypad(x, y, t) {
