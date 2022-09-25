@@ -230,17 +230,16 @@ e.returnValue = '';
 		
 		var imgBuf = new ArrayBuffer(kw*4*kh*cl*rw);
                 var imgView = new Uint8Array(imgBuf); 
-	
-                var cnv = document.getElementById('canvas'); 
-                var ctx = cnv.getContext('2d'); 
-                var imgData = ctx.createImageData(kw, kh); 
-		
 		for (let i=0; i<(kw*4*kh*cl*rw); i+=4) { 
                     imgView[i+0] = 0x40; // R
                     imgView[i+1] = 0x40; // G
                     imgView[i+2] = 0xFF; // B
                     imgView[i+3] = 0xFF; // A
                 }
+	
+                var cnv = document.getElementById('canvas'); 
+                var ctx = cnv.getContext('2d'); 
+                var imgData = ctx.createImageData(kw, kh); 
 		
 		function read(kc, kr, kw, kh, kl, kt) { 
 			var kx=x+px+(kw+kl*2)*kc; 
