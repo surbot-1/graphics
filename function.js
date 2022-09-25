@@ -10,7 +10,7 @@ function selectFile() {
         var reader = new FileReader();
         reader.addEventListener('load', function () {
             var text = reader.result; 
-            readText(text); 
+            textToHex(text); 
         }, false);
         if (file) { 
           reader.readAsText(file);
@@ -19,7 +19,7 @@ function selectFile() {
     ele.click();
 } 
 
-function readText(txt) { 
+function textToHex(txt) { 
   var buf = new ArrayBuffer(64); 
   var view = new Uint8Array(buf); 
   var text = ''; 
