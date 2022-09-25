@@ -6,7 +6,7 @@ function selectFile() {
   // ele.setAttribute('onchange','readFile()'); 
   // ele.setAttribute('style','display:none'); 
   ele.addEventListener('change', function () { 
-        var file = ele.files[0];
+        var file = ele.files[0]; 
         var reader = new FileReader();
         reader.addEventListener('load', function () {
             var text = reader.result; 
