@@ -159,7 +159,7 @@ e.returnValue = '';
 		if(th) {    
 			if(tx>=0 && tx<1024 && ty>=0 && ty<1024) { 
 				clearInterval(timer); touch=0; 
-				readPad(0, 0, 0); 
+				readKeypad(0, 0, 0); 
 				timer = setInterval(f1,0020); 
 			} 
 		} 
@@ -175,24 +175,15 @@ e.returnValue = '';
 	  
     <script> 
 	    
-      drawPad(0, 0, 0); // 2160-512 
-      function drawPad(x, y, t) { 
+      drawKeypad(0, 0, 0); // 2160-512 
+      function drawKeypad(x, y, t) { 
         var px=0; var py=0; 
         var pw=0; var ph=0;
         var cl=16; var rw=16; 
         var kc=0; var kr=0; 
         var kl=2; var kt=2; 
         var kw=60; var kh=60; 
-        
-        /* var keyBuf = new ArrayBuffer(kw*4*kh*cl*rw);
-        var keyView = new Uint8Array(keyBuf); 
-	for (let i=0; i<(kw*4*kh*cl*rw); i+=4) { 
-            keyView[i+0] = 0xFF; // R
-            keyView[i+1] = 0xFF; // G
-            keyView[i+2] = 0xFF; // B
-            keyView[i+3] = 0xFF; // A
-        } */ 
-  
+	      
         var cnv = document.getElementById('canvas'); 
         var ctx = cnv.getContext('2d'); 
         var imgData = ctx.createImageData(kw, kh); 
@@ -221,7 +212,7 @@ e.returnValue = '';
 	  
 	<script> 
 		
-	function readPad(x, y, t) { 
+	function readKeypad(x, y, t) { 
 		var tx=parseInt(touchx)-28; 
 		var ty=parseInt(touchy)-(1024+128); 
 		var th=touch;
@@ -233,15 +224,6 @@ e.returnValue = '';
                 var kw=60; var kh=60; 
 		var b=false; 
 		
-		/* var keyBuf = new ArrayBuffer(kw*4*kh*cl*rw);
-                var keyView = new Uint8Array(keyBuf); 
-		for (let i=0; i<(kw*4*kh*cl*rw); i+=4) { 
-                    keyView[i+0] = 0x40; // R
-                    keyView[i+1] = 0x40; // G
-                    keyView[i+2] = 0xFF; // B
-                    keyView[i+3] = 0xFF; // A
-                } */ 
-	
                 var cnv = document.getElementById('canvas'); 
                 var ctx = cnv.getContext('2d'); 
                 var imgData = ctx.createImageData(kw, kh); 
