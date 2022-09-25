@@ -5,7 +5,7 @@ function selectFile() {
   c.setAttribute('id','file'); 
   c.setAttribute('style','display:none;');
   document.getElementByID('div1').appendChild(c); 
-  c.click(); 
+  // c.click(); 
 } 
 
 function saveAsHex() { 
