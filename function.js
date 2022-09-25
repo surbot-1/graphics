@@ -217,3 +217,23 @@ function saveAsImage() {
 }
 
 function saveAsBase64() {}
+
+function zoomPixel1(w,h,a,b) { 
+  var bt = 0; var n=4; 
+  for (let i=0; i<w*n*a*h*b; i+=w*n*a*b) { 
+    for (let j=0; j<w*n*a; j+=n*a) { 
+      for (let k=0; k<w*n*a*b; k+=w*n*a) { 
+        for (let l=0; l<n*a; l+=n) { 
+          zpxlView[i+j+k+l+0] = pxlView[bt+0]; 
+          zpxlView[i+j+k+l+1] = pxlView[bt+1]; 
+          zpxlView[i+j+k+l+2] = pxlView[bt+2]; 
+          zpxlView[i+j+k+l+3] = pxlView[bt+3]; 
+        } 
+      } 
+      bt+=n; 
+    } 
+  } 
+}
+
+
+
