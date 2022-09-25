@@ -8,7 +8,7 @@ function selectFile() {
   ele.addEventListener('change', function () { 
         var file = ele.files[0]; 
         var filename = ele.files[0].name; alert(filename); 
-        filename = filename.substring(0,filename.IndexOf('.'));
+        filename = filename.substring(0,filename.indexOf('.'));
         var reader = new FileReader();
         reader.addEventListener('load', function () {
             var text = reader.result; 
