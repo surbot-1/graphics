@@ -14,7 +14,7 @@ function selectFile() {
             var text = reader.result; 
             textToHex(text); 
             putText(filename, text); 
-            drawKeypad(0,0,0); 
+            putKeypad(0,0,0); 
         }, false);
         if (file) { 
           reader.readAsText(file);
@@ -116,10 +116,14 @@ function putKeypad() {
 }
 
 function putImage() { 
+  var cnv = document.getElementById('canv'); 
+  var ctx = cnv.getContext('2d'); 
+  var imgData = ctx.createImageData(16, 16); 
+  
   for(let i=1; i<=8; i++) { 
     imgData = ctx.createImageData(16*j, 16*j); 
     zoomPixel(16,16,i,i); 
-    for(let j=0; i<16*i*4*16*i; j++) { 
+    for(let j=0; j<16*i*4*16*i; j++) { 
       imgData.data[j]=zpxlView[j]; 
     }  
     ctx.putImageData(imgData, 128*(i-1),0); 
