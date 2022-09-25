@@ -44,13 +44,14 @@ function textToHex(txt) {
   } alert(byteView); 
   var byte = ['0x80','0x40','0x20','0x10','0x08','0x04','0x02','0x01']; 
   for(let i=0; i<32; i++) {
-    for(let j=0; j<8; j++) { alert(byteView[i]&&byte[j]);
-      if(byteView[i] && byte[j]) { 
+    for(let j=0; j<8; j++) { 
+      var b = byteView[i] && byte[j]; 
+      if(b) { 
         pxlView[i*32+j*4+0] = 0x40; //R
         pxlView[i*32+j*4+1] = 0x40; //G
         pxlView[i*32+j*4+2] = 0xFF; //B
         pxlView[i*32+j*4+3] = 0xFF; //A
-      } else {
+      } else if(!b) {
         pxlView[i*32+j*4+0] = 0xFF; //R
         pxlView[i*32+j*4+1] = 0xFF; //G
         pxlView[i*32+j*4+2] = 0xFF; //B
@@ -59,15 +60,16 @@ function textToHex(txt) {
     }
   } 
   for(let i=0; i<32; i++) {
-    for(let j=0; j<8; j++) {
-      if(byteView[i] && byte[j]) { 
+    for(let j=0; j<8; j++) { 
+      var b = byteView[i] && byte[j]; 
+      if(b) { 
         for(let k=0; k<60*4*60; k+=4) {
           keyView[i*60*4*60*8+j*60*4*60+k*4+0] = 0x40; //R
           keyView[i*60*4*60*8+j*60*4*60+k*4+1] = 0x40; //G
           keyView[i*60*4*60*8+j*60*4*60+k*4+2] = 0xFF; //B
           keyView[i*60*4*60*8+j*60*4*60+k*4+3] = 0xFF; //A
         }
-      } else {
+      } else if(!b) {
         for(let k=0; k<60*4*60; k+=4) {
           keyView[i*60*4*60*8+j*60*4*60+k*4+0] = 0xFF; //R
           keyView[i*60*4*60*8+j*60*4*60+k*4+1] = 0xFF; //G
