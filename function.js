@@ -83,7 +83,7 @@ function putText(fname, txt) {
   document.getElementById('fname').value = fname; 
   document.getElementById('div2').innerHTML = '<br>' + 
     txt.substring(0,40)+'<br>'+txt.substring(40,80)+'<br>'+
-    txt.substring(40,120)+'<br>'+txt.substring(120,160); 
+    txt.substring(80,120)+'<br>'+txt.substring(120,160); 
 }
 
 function putKeypad(x, y, t) {
