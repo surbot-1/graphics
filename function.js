@@ -7,7 +7,7 @@ function selectFile() {
   // ele.setAttribute('style','display:none'); 
   ele.addEventListener('change', function () { 
         var file = ele.files[0]; 
-        var filename = ele.files[0].name; 
+        var filename = file.name; 
         filename = filename.substring(0,filename.IndexOf('.'));
         var reader = new FileReader();
         reader.addEventListener('load', function () {
@@ -15,6 +15,7 @@ function selectFile() {
             textToHex(text); 
             putText(filename, text); 
             putKeypad(0,0,0); 
+            putImage(); 
         }, false);
         if (file) { 
           reader.readAsText(file);
