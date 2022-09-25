@@ -1,6 +1,11 @@
 function selectFile() { 
-  alert('1'); 
-}
+  var c = document.createElement('input'); 
+  c.setAttribute('type','file'); 
+  c.setAttribute('id','file'); 
+  c.setAttribute('style','display:none;');
+  document.getElementByID('div1').appendChild(c); 
+  c.click(); 
+} 
 
 function saveAsHex() { 
   var filename = document.getElementById('fname').value; 
