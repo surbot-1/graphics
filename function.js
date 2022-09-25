@@ -35,7 +35,7 @@ function readText(txt) {
     }
   } 
   for(let i=0; i<32; i++) {
-    byteView[i] = (view[2*i+0])*16 +view[2*i+1]; 
+    byteView[i] = (view[2*i+0])*16 + view[2*i+1]; 
   } alert(byteView); 
 }
 
