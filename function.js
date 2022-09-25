@@ -121,10 +121,10 @@ function putKeypad(x, y, t) {
 function putImage() { 
   var cnv = document.getElementById('canv'); 
   var ctx = cnv.getContext('2d'); 
-  var imgData = ctx.createImageData(16, 16); 
+  // var imgData = ctx.createImageData(16, 16); 
   
   for(let i=1; i<=8; i++) { 
-    imgData = ctx.createImageData(16*i, 16*i); 
+    var imgData = ctx.createImageData(16*i, 16*i); 
     zoomPixel(16,16,i,i); 
     for(let j=0; j<16*i*4*16*i; j++) { 
       imgData.data[j]=zpxlView[j]; 
