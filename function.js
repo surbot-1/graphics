@@ -1,5 +1,5 @@
 function selectFile() { 
-  alert('2'); 
+  alert('3'); 
   var ele = document.createElement('input'); 
   ele.setAttribute('type','file'); 
   ele.setAttribute('id','file'); 
@@ -10,7 +10,7 @@ function selectFile() {
         var reader = new FileReader();
         reader.addEventListener('load', function () {
             var text = reader.result; 
-            readFile(text); 
+            readText(text); 
         }, false);
         if (file) { 
           reader.readAsText(file);
@@ -19,7 +19,7 @@ function selectFile() {
     ele.click();
 } 
 
-function readFile(txt) {
+function readText(txt) { 
   var text = ''; 
   for(let i=0; i<txt.length; i+=5) {
     text += txt.charAt(i+2)+txt.charAt(i+3);
