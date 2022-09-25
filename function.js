@@ -19,8 +19,13 @@ function selectFile() {
     ele.click();
 } 
 
-function readFile(t) {
-  var text = t; 
+function readFile(txt) {
+  var text = ''; 
+  for(let i=0; i<txt.length; i+=5) {
+    text += txt.charAt(i+2)+txt.charAt(i+3);
+  } // Array.from(text); 
+  var buffer = Buffer.from(text, 'hex'); 
+  var length = Buffer.byteLength(buffer, 'hex'); 
 }
 
 function saveAsHex() { 
