@@ -29,7 +29,7 @@ function readText(txt) {
   var hexChar = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']; 
   for(let i=0; i<32*2; i++) { 
     for(let j=0; j<16; j++) { 
-      if(text.charAt(j)==hexChar[j]) { 
+      if(text.charAt(j) == hexChar[j]) { 
         view[i] = j; break; 
       }
     }
