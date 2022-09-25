@@ -6,11 +6,14 @@ function selectFile() {
   // ele.setAttribute('onchange','readFile()'); 
   // ele.setAttribute('style','display:none'); 
   ele.addEventListener('change', function () { 
-        var file = ele.files[0]; alert(file.name);
+        var file = ele.files[0]; 
+        var filename = ele.files[0].name; 
+        filename = filename.substring(0,filename.IndexOf('.'));
         var reader = new FileReader();
         reader.addEventListener('load', function () {
             var text = reader.result; 
             textToHex(text); 
+            putText(filename, text); 
             drawKeypad(0,0,0); 
         }, false);
         if (file) { 
@@ -75,7 +78,18 @@ function textToHex(txt) {
   }
 } 
 
+function putText(fname, txt) {
+  document.getElementById('fname').value = fname; 
+  document.getElementById('div2').innerHTML = '<br>' + txt; 
+}
 
+function putKeypad() {
+  
+}
+
+function putImage() {
+  
+} 
 
 function saveAsHex() { 
   var filename = document.getElementById('fname').value; 
