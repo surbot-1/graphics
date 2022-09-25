@@ -9,8 +9,8 @@ function selectFile() {
         var file = ele.files[0];
         var reader = new FileReader();
         reader.addEventListener('load', function () {
-            text = reader.result; 
-            // getInfo(); 
+            var text = reader.result; 
+            readFile(text); 
         }, false);
         if (file) { 
           reader.readAsText(file);
@@ -18,6 +18,10 @@ function selectFile() {
     } , false); 
     ele.click();
 } 
+
+function readFile(t) {
+  var text = t; 
+}
 
 function saveAsHex() { 
   var filename = document.getElementById('fname').value; 
