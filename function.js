@@ -1,11 +1,22 @@
 function selectFile() { 
-  alert('1'); 
-  var c = document.createElement('input'); 
-  c.setAttribute('type','file'); 
-  c.setAttribute('id','file'); 
-  c.setAttribute('style','display:none;');
-  document.getElementByID('div1').appendChild(c); 
-  // c.click(); 
+  alert('2'); 
+  var ele = document.createElement('input'); 
+  ele.setAttribute('type','file'); 
+  ele.setAttribute('id','file'); 
+  // ele.setAttribute('onchange','readFile()'); 
+  // ele.setAttribute('style','display:none'); 
+  ele.addEventListener('change', function () { 
+        var file = ele.files[0];
+        var reader = new FileReader();
+        reader.addEventListener('load', function () {
+            text = reader.result; 
+            // getInfo(); 
+        }, false);
+        if (file) { 
+          reader.readAsText(file);
+        } 
+    } , false); 
+    ele.click();
 } 
 
 function saveAsHex() { 
