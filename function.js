@@ -27,7 +27,7 @@ function readText(txt) {
   var buffer = Buffer.from(text, 'hex'); 
   // var length = Buffer.byteLength(buffer, 'hex'); 
   var view = new Uint8Array(buffer); 
-  alert(view); 
+  alert(view[0]); 
 }
 
 function saveAsHex() { 
