@@ -328,64 +328,12 @@ e.returnValue = '';
 			} 
 	                ctx1.putImageData(imgData1, 0, 0); 
 			
-			/* var imgData2 = ctx1.createImageData(128, 128); 
-			var m = 0; 
-			for (let i=0; i<128*4*128; i+=128*4*8) { 
-			for (let j=0; j<4*128; j+=4*8) { 
-				for (let k=0; k<128*4*8; k+=128*4) {  
-					for (let l=0; l<4*8; l+=4) { 
-						imgData2.data[i+j+k+l+0] = pxlView[m+0]; 
-						imgData2.data[i+j+k+l+1] = pxlView[m+1]; 
-						imgData2.data[i+j+k+l+2] = pxlView[m+2]; 
-						imgData2.data[i+j+k+l+3] = pxlView[m+3]; 
-					} 
-				} m+=4; 
-			}
-			} 
-	                ctx1.putImageData(imgData2, 128, 0); */ 
-			/* var imgData2 = ctx1.createImageData(48, 80); 
-			var bt = 0; var m=0,n=4,w=16,h=16,a=3,b=5;
-			for (let i=0; i<w*n*a*h*b; i+=w*n*a*b) { 
-			for (let j=0; j<w*n*a; j+=n*a) { 
-				for (let k=0; k<w*n*a*b; k+=w*n*a) {  
-					for (let l=0; l<n*a; l+=n) { 
-						imgData2.data[i+j+k+l+0] = pxlView[bt+0]; 
-						imgData2.data[i+j+k+l+1] = pxlView[bt+1]; 
-						imgData2.data[i+j+k+l+2] = pxlView[bt+2]; 
-						imgData2.data[i+j+k+l+3] = pxlView[bt+3]; 
-					} 
-				} bt+=n; 
-			}
-			} 
-	                ctx1.putImageData(imgData2, 128, 0); */ 
-			
 			var imgData2 = ctx1.createImageData(32, 32); 
 			zoomPixel(16,16,2,2); 
 			for(let i=0; i<32*4*32; i++) { 
 				imgData2.data[i]=zpxlView[i]; 
 			} 
 			ctx1.putImageData(imgData2, 128,0); 
-			
-			/* mgData2 = ctx1.createImageData(48, 48); 
-			zoomPixel(16,16,3,3); 
-			for(let i=0; i<48*4*48; i++) { 
-				imgData2.data[i]=zpxlView[i]; 
-			} 
-			ctx1.putImageData(imgData2, 128*2,0); 
-			
-			imgData2 = ctx1.createImageData(64, 64); 
-			zoomPixel(16,16,4,4); 
-			for(let i=0; i<64*4*64; i++) { 
-				imgData2.data[i]=zpxlView[i]; 
-			} 
-			ctx1.putImageData(imgData2, 128*3,0); 
-			
-			imgData2 = ctx1.createImageData(128, 128); 
-			zoomPixel(16,16,8,8); 
-			for(let i=0; i<128*4*128; i++) { 
-				imgData2.data[i]=zpxlView[i]; 
-			} 
-			ctx1.putImageData(imgData2, 128*7,0); */ 
 			
 			for(let j=3; j<=8; j++) {
 			imgData2 = ctx1.createImageData(16*j, 16*j); 
@@ -394,11 +342,7 @@ e.returnValue = '';
 				imgData2.data[i]=zpxlView[i]; 
 			} 
 			ctx1.putImageData(imgData2, 128*(j-1),0); 
-			}
-			
-			/* document.getElementById('div2').innerHTML = 
-				'1' +'<br>'+ (byteView).toString(16).toUpperCase() +'<br>';  */ 
-			
+			} 
 			var text = ''; 
 			for(let i=0; i<1*2*16; i++) { 
 				var bh = byteView[i].toString(16).toUpperCase(); 
