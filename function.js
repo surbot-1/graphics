@@ -14,7 +14,7 @@ function selectFile() {
             var text = reader.result; 
             textToHex(text); 
             putText(filename, text); 
-            // putKeypad(28,0,0); 
+            // putKeypad(0,0,0); 
             // putImage(); 
         }, false);
         if (file) { 
