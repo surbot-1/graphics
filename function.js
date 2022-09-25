@@ -20,14 +20,23 @@ function selectFile() {
 } 
 
 function readText(txt) { 
-  var text = ''; alert(txt); 
-  for(let i=0; i<txt.length; i+=5) {
+  var buf = new ArrayBuffer(64); 
+  var view = new Uint8Array(buf); 
+  var text = ''; 
+  for(let i=0; i<32*5; i+=5) {
     text += txt.charAt(i+2)+txt.charAt(i+3);
-  } alert(text); // Array.from(text); 
-  var buffer = Buffer.from(text, 'hex'); alert(buffer); 
-  // var length = Buffer.byteLength(buffer, 'hex'); 
-  var view = new Uint8Array(buffer); 
-  alert(view[0]); 
+  } 
+  var hexChar = ['0','1','2','3','4','5','6','7','8','9','A','B','C','D','E','F']; 
+  for(let i=0; i<32*2; i++) { 
+    for(let j=0; j<16; j++) { 
+      if(text.charAt(j)==hexChar[j]) { 
+        view[i] = j; break; 
+      }
+    }
+  } 
+  for(let i=0; i<32; i++) {
+    byteView[i] = (view[2*i+0])*16 +view[2*i+1]; 
+  } alert(byteView); 
 }
 
 function saveAsHex() { 
