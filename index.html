@@ -176,13 +176,13 @@ e.returnValue = '';
         var kl=2; var kt=2; 
         var kw=60; var kh=60; 
         
-        var imgBuf = new ArrayBuffer(kw*4*kh*cl*rw);
-        var imgView = new Uint8Array(imgBuf); 
+        var keyBuf = new ArrayBuffer(kw*4*kh*cl*rw);
+        var keyView = new Uint8Array(imgBuf); 
 	for (let i=0; i<(kw*4*kh*cl*rw); i+=4) { 
-            imgView[i+0] = 0xFF; // R
-            imgView[i+1] = 0xFF; // G
-            imgView[i+2] = 0xFF; // B
-            imgView[i+3] = 0xFF; // A
+            keyView[i+0] = 0xFF; // R
+            keyView[i+1] = 0xFF; // G
+            keyView[i+2] = 0xFF; // B
+            keyView[i+3] = 0xFF; // A
         } 
   
         var cnv = document.getElementById('canvas'); 
@@ -196,7 +196,7 @@ e.returnValue = '';
 	    var kx=x+px+(kw+kl*2)*kc; 
 	    var ky=y+py+(kh+kt*2)*kr; 
 	    for (let i=0; i<(kw*4*kh); i++) { 
-		imgData.data[i] = imgView[kw*4*kh*(cl*kr+kc)+i]; 
+		imgData.data[i] = keyView[kw*4*kh*(cl*kr+kc)+i]; 
 	    } 
 	    ctx.putImageData(imgData, kx+kl, ky+kt); 
         } 
