@@ -1,5 +1,5 @@
 function selectFile() { 
-  alert('4'); 
+  alert('4');  
   var ele = document.createElement('input'); 
   ele.setAttribute('type','file'); 
   ele.setAttribute('id','file'); 
