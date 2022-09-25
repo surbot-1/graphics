@@ -1,5 +1,5 @@
 function selectFile() { 
-  alert('2');  
+  alert('1');  
   var ele = document.createElement('input'); 
   ele.setAttribute('type','file'); 
   ele.setAttribute('id','file'); 
@@ -14,8 +14,8 @@ function selectFile() {
             var text = reader.result; 
             textToHex(text); 
             putText(filename, text); 
-            putKeypad(0,0,0); 
-            putImage(); 
+            // putKeypad(28,0,0); 
+            // putImage(); 
         }, false);
         if (file) { 
           reader.readAsText(file);
@@ -63,16 +63,16 @@ function textToHex(txt) {
       if(byteView[i] && byte[j]) { 
         for(let k=0; k<60*4*60; k+=4) {
           keyView[i*60*4*60*8+j*60*4*60+k*4+0] = 0x40; //R
-          keyView[i*60*4*60*8+j*60*4*60+k*4+0] = 0x40; //G
-          keyView[i*60*4*60*8+j*60*4*60+k*4+0] = 0xFF; //B
-          keyView[i*60*4*60*8+j*60*4*60+k*4+0] = 0xFF; //A
+          keyView[i*60*4*60*8+j*60*4*60+k*4+1] = 0x40; //G
+          keyView[i*60*4*60*8+j*60*4*60+k*4+2] = 0xFF; //B
+          keyView[i*60*4*60*8+j*60*4*60+k*4+3] = 0xFF; //A
         }
       } else {
         for(let k=0; k<60*4*60; k+=4) {
           keyView[i*60*4*60*8+j*60*4*60+k*4+0] = 0xFF; //R
-          keyView[i*60*4*60*8+j*60*4*60+k*4+0] = 0xFF; //G
-          keyView[i*60*4*60*8+j*60*4*60+k*4+0] = 0xFF; //B
-          keyView[i*60*4*60*8+j*60*4*60+k*4+0] = 0xFF; //A
+          keyView[i*60*4*60*8+j*60*4*60+k*4+1] = 0xFF; //G
+          keyView[i*60*4*60*8+j*60*4*60+k*4+2] = 0xFF; //B
+          keyView[i*60*4*60*8+j*60*4*60+k*4+3] = 0xFF; //A
         }
       }
     }
@@ -84,7 +84,7 @@ function putText(fname, txt) {
   document.getElementById('div2').innerHTML = '<br>' + txt; 
 }
 
-function putKeypad() {
+function putKeypad(x, y, t) {
   var px=0; var py=0; 
   var pw=0; var ph=0; 
   var cl=16; var rw=16; 
@@ -122,7 +122,7 @@ function putImage() {
   var imgData = ctx.createImageData(16, 16); 
   
   for(let i=1; i<=8; i++) { 
-    imgData = ctx.createImageData(16*j, 16*j); 
+    imgData = ctx.createImageData(16*i, 16*i); 
     zoomPixel(16,16,i,i); 
     for(let j=0; j<16*i*4*16*i; j++) { 
       imgData.data[j]=zpxlView[j]; 
