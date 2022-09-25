@@ -69,10 +69,13 @@ function textToHex(txt) {
           keyView[i*60*4*60*8+j*60*4*60+k*4+0] = 0xFF; //G
           keyView[i*60*4*60*8+j*60*4*60+k*4+0] = 0xFF; //B
           keyView[i*60*4*60*8+j*60*4*60+k*4+0] = 0xFF; //A
+        }
       }
     }
   }
-}
+} 
+
+
 
 function saveAsHex() { 
   var filename = document.getElementById('fname').value; 
