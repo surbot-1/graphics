@@ -84,7 +84,35 @@ function putText(fname, txt) {
 }
 
 function putKeypad() {
+  var px=0; var py=0; 
+  var pw=0; var ph=0; 
+  var cl=16; var rw=16; 
+  var kc=0; var kr=0; 
+  var kl=2; var kt=2; 
+  var kw=60; var kh=60; 
   
+  var cnv = document.getElementById('canvas'); 
+  var ctx = cnv.getContext('2d'); 
+  var imgData = ctx.createImageData(kw, kh); 
+  
+  ctx.fillStyle = 'rgba(192,192,192,1.0)'; // gray 
+  ctx.fillRect(x, y, 1024, 1024); 
+  
+  function draw(kc, kr, kw, kh, kl, kt) { 
+    var kx=x+px+(kw+kl*2)*kc; 
+    var ky=y+py+(kh+kt*2)*kr; 
+    for (let i=0; i<(kw*4*kh); i++) { 
+      imgData.data[i] = keyView[kw*4*kh*(cl*kr+kc)+i]; 
+    } 
+    ctx.putImageData(imgData, kx+kl, ky+kt); 
+  } 
+  
+  for (let j=0; j<rw; j++) { 
+    for (let i=0; i<cl; i++) { 
+      kc=i; kr=j; 
+      draw(kc, kr, kw, kh, kl, kt); 
+    } 
+  }  
 }
 
 function putImage() {
