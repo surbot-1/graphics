@@ -295,6 +295,10 @@ function zoomPixel2(w,h,a,b) {
       bt+=n; 
     } 
   } 
+} 
+
+function zoomByte() { 
+  
 }
 
 alert('1'); 
