@@ -1,5 +1,5 @@
 function selectFile() { 
-  alert('2');  
+  alert('1');  
   var ele = document.createElement('input'); 
   ele.setAttribute('type','file'); 
   ele.setAttribute('id','file'); 
@@ -64,17 +64,17 @@ function textToHex(txt) {
       var b = byteView[i] & byte[j]; 
       if(b) { 
         for(let k=0; k<60*4*60; k+=4) {
-          keyView[i*60*4*60*8+j*60*4*60+k*4+0] = 0x40; //R
-          keyView[i*60*4*60*8+j*60*4*60+k*4+1] = 0x40; //G
-          keyView[i*60*4*60*8+j*60*4*60+k*4+2] = 0xFF; //B
-          keyView[i*60*4*60*8+j*60*4*60+k*4+3] = 0xFF; //A
+          keyView[i*60*4*60*8+j*60*4*60+k+0] = 0x40; //R
+          keyView[i*60*4*60*8+j*60*4*60+k+1] = 0x40; //G
+          keyView[i*60*4*60*8+j*60*4*60+k+2] = 0xFF; //B
+          keyView[i*60*4*60*8+j*60*4*60+k+3] = 0xFF; //A
         }
       } else if(!b) {
         for(let k=0; k<60*4*60; k+=4) {
-          keyView[i*60*4*60*8+j*60*4*60+k*4+0] = 0xFF; //R
-          keyView[i*60*4*60*8+j*60*4*60+k*4+1] = 0xFF; //G
-          keyView[i*60*4*60*8+j*60*4*60+k*4+2] = 0xFF; //B
-          keyView[i*60*4*60*8+j*60*4*60+k*4+3] = 0xFF; //A
+          keyView[i*60*4*60*8+j*60*4*60+k+0] = 0xFF; //R
+          keyView[i*60*4*60*8+j*60*4*60+k+1] = 0xFF; //G
+          keyView[i*60*4*60*8+j*60*4*60+k+2] = 0xFF; //B
+          keyView[i*60*4*60*8+j*60*4*60+k+3] = 0xFF; //A
         }
       }
     }
