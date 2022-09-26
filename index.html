@@ -120,6 +120,8 @@
                 var zpxlView = new Uint8Array(zpxlBuf); 
 		var byteBuf = new ArrayBuffer(1*2*16*128); 
                 var byteView = new Uint8Array(byteBuf); 
+		var zbyteBuf = new ArrayBuffer(1*2*16*8*8); 
+                var zbyteView = new Uint8Array(zbyteBuf); 
 		for(let i=0; i<16*4*16; i+=4) { 
 			pxlView[i+0] = 0xFF; // R
                         pxlView[i+1] = 0xFF; // G
