@@ -45,7 +45,7 @@ function textToHex(txt) {
   var byte = ['0x80','0x40','0x20','0x10','0x08','0x04','0x02','0x01']; 
   for(let i=0; i<32; i++) {
     for(let j=0; j<8; j++) { 
-      var b = byteView[i] && byte[j]; 
+      var b = byteView[i] & byte[j]; 
       if(b) { 
         pxlView[i*32+j*4+0] = 0x40; //R
         pxlView[i*32+j*4+1] = 0x40; //G
