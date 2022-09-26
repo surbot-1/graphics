@@ -263,8 +263,8 @@ function saveAsBase64() {
   for(let i=0; i<16*4*16; i++) {
     imgData.data[i] = pxlView[i]; 
   } 
-  // ctx.putImageData(imgData, 0, 0); 
-  
+  ctx.putImageData(imgData, 0, 0); 
+  alert('b');
   let filename = document.getElementById('fname').value; 
   let cnvImage = c.toDataURL('image/png', 1.0); 
   // c.remove(); alert(cnvImage); 
