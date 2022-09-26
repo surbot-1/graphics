@@ -1,5 +1,5 @@
 function selectFile() { 
-  alert('1');  
+  alert('2');  
   var ele = document.createElement('input'); 
   ele.setAttribute('type','file'); 
   ele.setAttribute('id','file'); 
@@ -61,7 +61,7 @@ function textToHex(txt) {
   } 
   for(let i=0; i<32; i++) {
     for(let j=0; j<8; j++) { 
-      var b = byteView[i] && byte[j]; 
+      var b = byteView[i] & byte[j]; 
       if(b) { 
         for(let k=0; k<60*4*60; k+=4) {
           keyView[i*60*4*60*8+j*60*4*60+k*4+0] = 0x40; //R
