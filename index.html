@@ -59,6 +59,9 @@
 	document.getElementById('fname').style = 
 		'margin-left:8px;margin-top:24px;font-size:32px;'; 
 	   
+	var btnname1 = ['Select File','Back','Close']; 
+	var btnid1 = ['sfile','bback','bclose']; 
+	var bclick1 = ['selectFile()','back()','close()']; 
 	var button = document.createElement('button'); 
 	button.setAttribute('type','button'); 
 	button.setAttribute('id','sfile'); 
@@ -71,14 +74,14 @@
 	   
 	document.getElementById('div1').innerHTML += '<br>'+'Save As '; 
 	
-	var btnname = ['Back','Close','MonoHex','MonoText','RGBAraw','Base64','Image']; 
-	var btnid = ['bback','bclose','bhex','btext','braw','bbase64','bimage']; 
-	var fclick = ['back()','close()','saveAsHex()','saveAsText()','saveAsRaw()','saveAsBase64','saveAsImage()']; 
+	var btnname = ['MonoHex','MonoText','RGBAraw','Base64','Image']; 
+	var btnid = ['bhex','btext','braw','bbase64','bimage']; 
+	var bclick = ['saveAsHex()','saveAsText()','saveAsRaw()','saveAsBase64','saveAsImage()']; 
 	for(let i=0; i<7; i++) {
 		var button = document.createElement('button'); 
 		button.setAttribute('type','button'); 
 		button.setAttribute('id',btnid[i]); 
-		button.setAttribute('onclick',fclick[i]); 
+		button.setAttribute('onclick',bclick[i]); 
 		var text = document.createTextNode(btnname[i]); 
 		button.appendChild(text);
 		document.getElementById('div1').appendChild(button); 
