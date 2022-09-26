@@ -1,5 +1,4 @@
 function selectFile() { 
-  alert('1');  
   var ele = document.createElement('input'); 
   ele.setAttribute('type','file'); 
   ele.setAttribute('id','file'); 
@@ -7,7 +6,7 @@ function selectFile() {
   // ele.setAttribute('style','display:none'); 
   ele.addEventListener('change', function () { 
         var file = ele.files[0]; 
-        var filename = ele.files[0].name; alert(filename); 
+        var filename = ele.files[0].name; 
         filename = filename.substring(0,filename.indexOf('.'));
         var reader = new FileReader();
         reader.addEventListener('load', function () {
@@ -41,7 +40,7 @@ function textToHex(txt) {
   } 
   for(let i=0; i<32; i++) {
     byteView[i] = view[2*i+0]*16 + view[2*i+1]; 
-  } alert(byteView); 
+  } 
   var byte = ['0x80','0x40','0x20','0x10','0x08','0x04','0x02','0x01']; 
   for(let i=0; i<32; i++) {
     for(let j=0; j<8; j++) { 
@@ -117,7 +116,7 @@ function putKeypad(x, y, t) {
       kc=i; kr=j; 
       draw(kc, kr, kw, kh, kl, kt); 
     } 
-  } alert('2'); 
+  } 
 }
 
 function putImage() { 
@@ -132,7 +131,7 @@ function putImage() {
       imgData.data[j]=zpxlView[j]; 
     }  
     ctx.putImageData(imgData, 128*(i-1),0); 
-  } alert('3'); 
+  } 
 } 
 
 function saveAsHex() { 
