@@ -185,11 +185,11 @@ function saveAsRaw() {
 
 function saveAsImage() {  
   var c = document.createElement('canvas'); 
-  c.setAttribute('id','cnv1') ; 
+  c.setAttribute('id','ccnv') ; 
   c.setAttribute('width','16') ; 
   c.setAttribute('height','16') ; 
   document.body.appendChild(c);
-  var cnv = document.getElementById('cnv1'); 
+  var cnv = document.getElementById('ccnv'); 
   var ctx = cnv.getContext('2d'); 
   var imgData = ctx.createImageData(16, 16); 
   for(let i=0; i<16*4*16; i++) {
@@ -198,7 +198,7 @@ function saveAsImage() {
   ctx.putImageData(imgData, 0, 0); 
   
   let filename = document.getElementById('fname').value; 
-  let canvasImage = document.getElementById('cnv1').toDataURL('image/png', 1.0); 
+  let canvasImage = document.getElementById('ccnv').toDataURL('image/png', 1.0); 
   c.remove(); 
     
   // this can be used to download any image from webpage to local disk
@@ -219,21 +219,11 @@ function saveAsImage() {
 
 function saveAsBase64() { 
   var c = document.createElement('canvas'); 
-  c.setAttribute('id','cnv1') ; 
+  c.setAttribute('id','ccnv') ; 
   c.setAttribute('width','16') ; 
   c.setAttribute('height','16') ; 
-  
-  c.getContext('2d'); 
-  var imgData = c.createImageData(16, 16); 
-  for(let i=0; i<16*4*16; i++) {
-    imgData.data[i] = pxlView[i]; 
-  } 
-  c.putImageData(imgData, 0, 0); 
-  var filename = document.getElementById('fname').value; 
-  var canvasImage = c.toDataURL('image/png'); 
-  /* 
   document.body.appendChild(c);
-  var cnv = document.getElementById('cnv1'); 
+  var cnv = document.getElementById('ccnv'); 
   var ctx = cnv.getContext('2d'); 
   var imgData = ctx.createImageData(16, 16); 
   for(let i=0; i<16*4*16; i++) {
@@ -242,8 +232,8 @@ function saveAsBase64() {
   ctx.putImageData(imgData, 0, 0); 
   
   let filename = document.getElementById('fname').value; 
-  let canvasImage = document.getElementById('cnv1').toDataURL('image/png'); 
-  c.remove(); */ 
+  let canvasImage = document.getElementById('ccnv').toDataURL('image/png', 1.0); 
+  c.remove(); 
     
   // this can be used to download any image from webpage to local disk
   let xhr = new XMLHttpRequest();
@@ -278,5 +268,5 @@ function zoomPixel2(w,h,a,b) {
   } 
 }
 
-alert('1'); 
+alert('2'); 
 
