@@ -265,7 +265,7 @@ function saveAsBase64() {
     imgData.data[i] = pxlView[i]; 
   } 
   // ctx.putImageData(imgData, 0, 0); 
-  alert('a');
+  
   let filename = document.getElementById('fname').value; 
   let cnvImage = c.toDataURL('image/png', 1.0); 
   // c.remove(); 
@@ -302,5 +302,5 @@ function zoomByte() {
   
 }
 
-alert('1'); 
+// alert('1'); 
 
