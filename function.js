@@ -198,7 +198,7 @@ function saveAsImage() {
   ctx.putImageData(imgData, 0, 0); 
   
   let filename = document.getElementById('fname').value; 
-  let canvasImage = document.getElementById('cnv1').toDataURL('image/png'); 
+  let canvasImage = document.getElementById('cnv1').toDataURL('image/png', 1.0); 
   c.remove(); 
     
   // this can be used to download any image from webpage to local disk
