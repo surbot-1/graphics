@@ -70,10 +70,10 @@
 		'margin-left:8px;margin-top:24px;font-size:32px;'; 
 	document.getElementById('div1').innerHTML += '<br>'; 
 	
-	var btnname = ['Back','Close','SaveAsHex','SaveAsText','SaveAsRaw','SaveAsImage']; 
-	var btnid = ['bback','bclose','bhex','btext','braw','bimage']; 
-	var fclick = ['back()','close()','saveAsHex()','saveAsText()','saveAsRaw()','saveAsImage()']; 
-	for(let i=0; i<6; i++) {
+	var btnname = ['Back','Close','MonoHex','MonoText','RGBAraw','Base64','Image']; 
+	var btnid = ['bback','bclose','bhex','btext','braw','bbase64','bimage']; 
+	var fclick = ['back()','close()','saveAsHex()','saveAsText()','saveAsRaw()','saveAsBase64','saveAsImage()']; 
+	for(let i=0; i<7; i++) {
 		var button = document.createElement('button'); 
 		button.setAttribute('type','button'); 
 		button.setAttribute('id',btnid[i]); 
