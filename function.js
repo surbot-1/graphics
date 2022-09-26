@@ -222,25 +222,28 @@ function saveAsBase64() {
   c.setAttribute('id','cnv1') ; 
   c.setAttribute('width','16') ; 
   c.setAttribute('height','16') ; 
+  
   c.getContext('2d'); 
   var imgData = c.createImageData(16, 16); 
   for(let i=0; i<16*4*16; i++) {
     imgData.data[i] = pxlView[i]; 
   } 
+  c.putImageData(imgData, 0, 0); 
   var filename = document.getElementById('fname').value; 
   var canvasImage = c.toDataURL('image/png'); 
-  // document.body.appendChild(c);
-  // var cnv = document.getElementById('cnv1'); 
-  // var ctx = cnv.getContext('2d'); 
-  // var imgData = ctx.createImageData(16, 16); 
-  // for(let i=0; i<16*4*16; i++) {
-    // imgData.data[i] = pxlView[i]; 
-  // } 
-  // ctx.putImageData(imgData, 0, 0); 
+  /* 
+  document.body.appendChild(c);
+  var cnv = document.getElementById('cnv1'); 
+  var ctx = cnv.getContext('2d'); 
+  var imgData = ctx.createImageData(16, 16); 
+  for(let i=0; i<16*4*16; i++) {
+    imgData.data[i] = pxlView[i]; 
+  } 
+  ctx.putImageData(imgData, 0, 0); 
   
-  // let filename = document.getElementById('fname').value; 
-  // let canvasImage = document.getElementById('cnv1').toDataURL('image/png'); 
-  // c.remove(); 
+  let filename = document.getElementById('fname').value; 
+  let canvasImage = document.getElementById('cnv1').toDataURL('image/png'); 
+  c.remove(); */ 
     
   // this can be used to download any image from webpage to local disk
   let xhr = new XMLHttpRequest();
