@@ -267,7 +267,7 @@ function saveAsBase64() {
   
   let filename = document.getElementById('fname').value; 
   let cnvImage = document.getElementById('ccnv').toDataURL('image/png', 1.0); 
-  c.remove(); 
+  c.remove(); alert(cnvImage); 
   var blob = new Blob([cnvImage], {type: 'text/plain'});
   
   var a = document.createElement('a'); 
@@ -301,5 +301,5 @@ function zoomByte() {
   
 }
 
-alert('1'); 
+alert('2'); 
 
