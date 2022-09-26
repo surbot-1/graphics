@@ -218,7 +218,9 @@ function saveAsImage() {
     xhr.send();
 }
 
-function saveAsBase64() {}
+function saveAsBase64() { 
+  
+}
 
 function zoomPixel2(w,h,a,b) { 
   var bt = 0; var n=4; 
