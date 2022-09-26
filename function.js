@@ -258,6 +258,7 @@ function saveAsBase64() {
   c.setAttribute('height','16') ; 
   // document.body.appendChild(c);
   // var cnv = document.getElementById('ccnv'); 
+  // var ctx = cnv.getContext('2d'); 
   var ctx = c.getContext('2d'); 
   var imgData = ctx.createImageData(16, 16); 
   for(let i=0; i<16*4*16; i++) {
@@ -267,7 +268,7 @@ function saveAsBase64() {
   alert('d');
   let filename = document.getElementById('fname').value; 
   let cnvImage = c.toDataURL('image/png', 1.0); 
-  // c.remove(); alert(cnvImage); 
+  // c.remove(); 
   var blob = new Blob([cnvImage], {type: 'text/plain'});
   
   var a = document.createElement('a'); 
