@@ -253,7 +253,7 @@ function saveAsImageJPEG() {
 
 function saveAsBase64() { 
   var c = document.createElement('canvas'); 
-  c.setAttribute('id','ccnv') ; 
+  // c.setAttribute('id','ccnv') ; 
   c.setAttribute('width','16') ; 
   c.setAttribute('height','16') ; 
   // document.body.appendChild(c);
@@ -264,20 +264,20 @@ function saveAsBase64() {
     imgData.data[i] = pxlView[i]; 
   } 
   ctx.putImageData(imgData, 0, 0); 
-  alert('c');
+  alert('d');
   let filename = document.getElementById('fname').value; 
   let cnvImage = c.toDataURL('image/png', 1.0); 
   // c.remove(); alert(cnvImage); 
   var blob = new Blob([cnvImage], {type: 'text/plain'});
   
   var a = document.createElement('a'); 
-  a.setAttribute('id','ca'); 
+  // a.setAttribute('id','ca'); 
   a.href = window.URL.createObjectURL(blob);
   a.download = filename + '.txt';
-  a.style.display = 'none';
-  document.body.appendChild(a); 
+  // a.style.display = 'none';
+  // document.body.appendChild(a); 
   a.click();
-  a.remove(); 
+  // a.remove(); 
 } 
 
 function zoomPixel2(w,h,a,b) { 
