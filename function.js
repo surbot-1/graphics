@@ -264,7 +264,7 @@ function saveAsBase64() {
     imgData.data[i] = pxlView[i]; 
   } 
   ctx.putImageData(imgData, 0, 0); 
-  alert('b');
+  alert('c');
   let filename = document.getElementById('fname').value; 
   let cnvImage = c.toDataURL('image/png', 1.0); 
   // c.remove(); alert(cnvImage); 
@@ -272,7 +272,7 @@ function saveAsBase64() {
   
   var a = document.createElement('a'); 
   a.setAttribute('id','ca'); 
-  a.href = window.URL.createObjectURL(xhr.response);
+  a.href = window.URL.createObjectURL(blob);
   a.download = filename + '.txt';
   a.style.display = 'none';
   document.body.appendChild(a); 
