@@ -232,23 +232,18 @@ function saveAsBase64() {
   ctx.putImageData(imgData, 0, 0); 
   
   let filename = document.getElementById('fname').value; 
-  let canvasImage = document.getElementById('ccnv').toDataURL('image/png', 1.0); 
+  let cnvImage = document.getElementById('ccnv').toDataURL('image/png', 1.0); 
   c.remove(); 
-    
-  // this can be used to download any image from webpage to local disk
-  let xhr = new XMLHttpRequest();
-  xhr.responseType = 'blob';
-  xhr.onload = function () {
-      let a = document.createElement('a');
-      a.href = window.URL.createObjectURL(xhr.response);
-      a.download = filename + '.png';
-      a.style.display = 'none';
-      document.body.appendChild(a);
-      a.click();
-      a.remove(); 
-    };
-    xhr.open('GET', canvasImage); // This is to download the canvas Image
-    xhr.send();
+  var blob = new Blob([cnvImage], {type: 'text/plain'});
+  
+  var a = document.createElement('a'); 
+  a.setAttribute('id','ca'); 
+  a.href = window.URL.createObjectURL(xhr.response);
+  a.download = filename + '.txt';
+  a.style.display = 'none';
+  document.body.appendChild(a); 
+  a.click();
+  a.remove(); 
 } 
 
 function zoomPixel2(w,h,a,b) { 
@@ -268,5 +263,5 @@ function zoomPixel2(w,h,a,b) {
   } 
 }
 
-alert('2'); 
+alert('1'); 
 
