@@ -278,5 +278,5 @@ function zoomPixel2(w,h,a,b) {
   } 
 }
 
-
+alert('1'); 
 
