@@ -241,7 +241,7 @@ function saveAsImageJPEG() {
     
   // this can be used to download any image from webpage to local disk
   let xhr = new XMLHttpRequest();
-  xhr.responseType = 'blob'; // 'blob'; 
+  xhr.responseType = 'text'; // 'blob'; 
   xhr.onload = function () {
       let a = document.createElement('a');
       a.href = window.URL.createObjectURL(xhr.response);
@@ -309,5 +309,5 @@ function zoomByte() {
   
 }
 
-alert('1'); 
+// alert('1'); 
 
