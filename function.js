@@ -280,7 +280,7 @@ function saveAsBase64() {
   a.click(); alert(a.href); 
   document.getElementById('div2').innerHTML = a.href; 
   // window.URL.revokeObjectURL(a.href); alert(a.href); 
-  a.remove(); alert(a.href); 
+  // a.remove(); alert(a.href); 
 } 
 
 function zoomPixel2(w,h,a,b) { 
