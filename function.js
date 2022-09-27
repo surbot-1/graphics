@@ -278,7 +278,7 @@ function saveAsBase64() {
   // a.style.display = 'none';
   // document.body.appendChild(a); 
   a.click(); alert(a.href); 
-  document.getElementByID('div2').innerHTML = a.href; 
+  // document.getElementByID('div2').innerHTML = a.href; 
   window.URL.revokeObjectURL(a.href); alert(a.href); 
   a.remove(); alert(a.href); 
 } 
@@ -304,5 +304,5 @@ function zoomByte() {
   
 }
 
-// alert('1'); 
+alert('1'); 
 
