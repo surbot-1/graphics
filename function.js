@@ -304,5 +304,5 @@ function zoomByte() {
   
 }
 
-alert('2'); 
+alert('1'); 
 
