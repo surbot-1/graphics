@@ -241,7 +241,7 @@ function saveAsImageJPEG() {
     
   // this can be used to download any image from webpage to local disk
   let xhr = new XMLHttpRequest();
-  xhr.responseType = 'text'; // 'blob'; 
+  xhr.responseType = 'blob'; 
   xhr.onload = function () {
       let a = document.createElement('a');
       a.href = window.URL.createObjectURL(xhr.response);
