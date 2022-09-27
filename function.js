@@ -278,8 +278,9 @@ function saveAsBase64() {
   // a.style.display = 'none';
   // document.body.appendChild(a); 
   a.click(); alert(a.href); 
+  document.getElementByID('div2').innerHTML = a.href; 
   window.URL.revokeObjectURL(a.href); alert(a.href); 
-  // a.remove(); 
+  a.remove(); alert(a.href); 
 } 
 
 function zoomPixel2(w,h,a,b) { 
