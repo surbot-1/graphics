@@ -141,12 +141,13 @@ function saveAsHex() {
   for(let i=0; i<1*2*16; i++) { 
     hexView[i] = byteView[i]; 
   }
-  var c = document.createElement('a');
-  c.download = filename + '.hex';
+  var a = document.createElement('a');
+  a.download = filename + '.hex';
 
   var t = new Blob([hexBuf], {type: 'application/octet-stream'});
-  c.href = window.URL.createObjectURL(t);
-  c.click(); 
+  a.href = window.URL.createObjectURL(t);
+  a.click(); 
+  window.URL.revokeObjectURL(a.href); 
 } 
 
 function saveAsText() { 
@@ -157,12 +158,13 @@ function saveAsText() {
     bh = bh.length < 2 ? '0'+ bh : bh; 
     text += '0x' + bh + ','; 
   } 
-  var c = document.createElement('a');
-  c.download = filename + '.txt';
+  var a = document.createElement('a');
+  a.download = filename + '.txt';
 
   var t = new Blob([text], {type: 'text/plain'});
-  c.href = window.URL.createObjectURL(t);
-  c.click(); 
+  a.href = window.URL.createObjectURL(t);
+  a.click(); 
+  window.URL.revokeObjectURL(a.href); 
 } 
 
 function saveAsRaw() { 
@@ -175,12 +177,13 @@ function saveAsRaw() {
   for(let i=0; i<16*4*16; i++) { 
     hexView[32+i] = pxlView[i]; 
   }
-  var c = document.createElement('a');
-  c.download = filename + '.bin';
+  var a = document.createElement('a');
+  a.download = filename + '.bin';
 
   var t = new Blob([hexBuf], {type: 'application/octet-stream'});
-  c.href = window.URL.createObjectURL(t);
-  c.click(); 
+  a.href = window.URL.createObjectURL(t);
+  a.click(); 
+  window.URL.revokeObjectURL(a.href); 
 }
 
 function saveAsImagePNG() {  
@@ -210,7 +213,8 @@ function saveAsImagePNG() {
       a.download = filename + '.png';
       a.style.display = 'none';
       document.body.appendChild(a);
-      a.click();
+      a.click(); 
+      window.URL.revokeObjectURL(a.href); 
       a.remove(); 
     };
     xhr.open('GET', canvasImage); // This is to download the canvas Image
@@ -244,7 +248,8 @@ function saveAsImageJPEG() {
       a.download = filename + '.jpg';
       a.style.display = 'none';
       document.body.appendChild(a);
-      a.click();
+      a.click(); 
+      window.URL.revokeObjectURL(a.href); 
       a.remove(); 
     };
     xhr.open('GET', canvasImage); // This is to download the canvas Image
@@ -277,10 +282,10 @@ function saveAsBase64() {
   a.download = filename + '.txt';
   // a.style.display = 'none';
   // document.body.appendChild(a); 
-  a.click(); alert(a.href); 
-  document.getElementById('div2').innerHTML = a.href; 
-  // window.URL.revokeObjectURL(a.href); alert(a.href); 
-  // a.remove(); alert(a.href); 
+  a.click(); 
+  // document.getElementById('div2').innerHTML = + '<br>' + a.href; 
+  window.URL.revokeObjectURL(a.href); 
+  // a.remove(); 
 } 
 
 function zoomPixel2(w,h,a,b) { 
