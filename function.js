@@ -277,7 +277,8 @@ function saveAsBase64() {
   a.download = filename + '.txt';
   // a.style.display = 'none';
   // document.body.appendChild(a); 
-  a.click();
+  a.click(); 
+  window.URL.revokeObjectURL(a.href); 
   // a.remove(); 
 } 
 
